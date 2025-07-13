@@ -1,0 +1,24 @@
+// padding nécessaire pour l'espacement entre le menu et la marge du haut
+// &_link : & commercial pour ne pas repeter plusieurs code du design du menu  
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    &_link {
+      text-decoration: none;
+      color: $white;
+      margin: 0 2rem;
+      padding-left: 12px;
+      font-family: 'beyno', 'sans relief';
+      font-size: 15px;
+    }
+    &_link:hover{
+      text-decoration: underline;
+      color: $gray;
+    }
+    &_link.active{
+      border-bottom: 2px solid $gray;
+      color: $gray;
+    }
+}

@@ -1,0 +1,50 @@
+// Module pour aller chercher les valeurs dans les partials _typo.scss et colors.scss
+@import './typo';
+@import './colors';
+
+// Supprime les marges externes par défaut appliquées par le navigateur.
+// Supprime les espacements internes (padding) par défaut.
+// largeur/hauteur inclut le padding et la bordure, ce qui rend la mise en page plus prévisible et facile à gérer.
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+// Arrière plan utilisé 
+body{
+    background: radial-gradient(  
+        126.67% 350.28% at -21.35% 0%,
+        #11213F 0%,
+        #0B0B0B 39.1%,
+        rgba(2, 23, 64, 0.837641) 94.57%,
+        rgba(2, 23, 64, 0) 100%); 
+    font-family: 'cantarell', 'sans-serif';
+    font-size: 16px;
+    color: $white;
+}
+
+// Héritage...
+%titre {
+    font-family: 'Panthera', 'sans relief';
+    font-size: 50px;
+    color: $gray;
+}
+
+%sous-titre {
+    font-family: 'Beyno', 'sans relief';
+    font-size: 22px;
+    color: $gray;
+}
+
+%sous-titre-wakanda {
+    font-family: 'Wakanda', 'sans relief';
+    font-size: 30px;
+    color: $gray;
+}
+
