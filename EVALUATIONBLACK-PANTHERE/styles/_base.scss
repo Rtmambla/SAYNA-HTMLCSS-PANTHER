@@ -16,7 +16,17 @@
 
 .container{
     width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 // Arrière plan utilisé 
@@ -36,7 +46,7 @@ body{
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow-x: hidden;
+    
 }
 
 
@@ -59,3 +69,9 @@ body{
     color: $gray;
 }
 
+// @media (max-width: 425px) {
+//   html, body {
+//     overflow-x: hidden;
+//     width: 100%;
+//   }
+// }

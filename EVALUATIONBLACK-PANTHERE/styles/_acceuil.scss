@@ -57,6 +57,10 @@
         top: 300px;
         color: $gray; // ou #a59bb5 si tu n’as pas défini $gray
     }
+    .social:hover{
+        color: $white;  
+        cursor: pointer;
+    }
 }
 
 // DESIGN DE LA PARTIE PERSONNAGES
@@ -76,7 +80,7 @@
         display: flex;
         justify-content: center; /* Centre les images */
         gap: 70px;
-        max-width: 1200px;
+        // max-width: 1200px;
         margin: 0 auto;
         align-items: center;
     }
@@ -126,5 +130,28 @@
     }
 }
 
-
-
+// DESIGN POUR TOUT TYPED'ECRAN
+@media screen and (max-width: 1000px) {
+  #hero{
+    background-size: cover; // ✅ Couvre toute la surface
+    background-position: top center;
+    background-size: 65%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .hero_wrapper {
+      position: relative;
+      .hero_content {
+        position: static;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        top: auto;
+        left: auto;
+        p, a {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}
