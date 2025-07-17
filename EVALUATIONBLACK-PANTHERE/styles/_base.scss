@@ -9,7 +9,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
+
 }
+
 
 .container{
     width: 80%;
@@ -23,11 +26,19 @@ body{
         #11213F 0%,
         #0B0B0B 39.1%,
         rgba(2, 23, 64, 0.837641) 94.57%,
-        rgba(2, 23, 64, 0) 100%); 
+        rgba(2, 23, 64, 0) 100%);
+    width: 100%; // ✅ Largeur écran
+    background-repeat: no-repeat;
+    background-size: cover; // ✅ Couvre toute la surface
     font-family: 'cantarell', 'sans-serif';
     font-size: 16px;
     color: $white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
 }
+
 
 // Héritage...
 %titre {
