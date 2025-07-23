@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Beyno";
   src: url("../Assets/Police/BEYNO.ttf") format("truetype");
@@ -25,6 +26,7 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+  overflow: hidden;
 }
 
 body {
@@ -33,7 +35,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "cantarell", "sans-serif";
-  font-size: 16px;
+  font-size: 14px;
   color: #FFFFFF;
   margin: 0;
   padding: 0;
@@ -46,7 +48,7 @@ body {
   color: #9e91b7;
 }
 
-#naissance .wrapper .content h2, #personnages .personnages_description h3, #hero .hero_wrapper .hero_content h2 {
+#naissance .wrapper .content h2, #personnages .personnages .personnages_description h3, #hero .hero_wrapper .hero_content h2 {
   font-family: "Beyno", "sans relief";
   font-size: 22px;
   color: #9e91b7;
@@ -174,7 +176,7 @@ body {
   display: flex;
   gap: 50px;
 }
-#personnages .carte {
+#personnages .personnages .carte {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -182,33 +184,38 @@ body {
   color: #FFFFFF;
   max-width: 700px;
 }
-#personnages .carte img {
+#personnages .personnages .carte img {
   width: 200px;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   margin-right: 20px;
 }
-#personnages .personnages_description {
+#personnages .personnages .personnages_description {
   padding: 30px 0 30px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-#personnages .personnages_description h3 {
+#personnages .personnages .personnages_description h3 {
   margin-bottom: 10px;
 }
+#personnages .personnages .personnages_description a {
+  color: #FFFFFF;
+  margin-top: 6px;
+}
 #personnages .shuri img {
-  width: 157px;
+  width: 162px;
   position: absolute;
 }
 
 #naissance {
   margin: 0 auto;
   padding-top: 90px;
-  padding-left: 120px;
+  padding-left: 180px;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 #naissance .wrapper {
   display: flex;
@@ -217,7 +224,7 @@ body {
   width: 100%;
 }
 #naissance .wrapper .content {
-  width: 50%;
+  width: 80%;
 }
 #naissance .wrapper .content h2 {
   padding: 20px 0;
@@ -226,6 +233,155 @@ body {
   font-size: 14px;
   text-align: justify;
   padding: 10px 0;
+}
+#naissance .T’Challa-trone {
+  position: absolute;
+  padding-top: 5px;
+  border-radius: 10px;
+  right: 145px;
+  z-index: 2;
+}
+#naissance .T’Challa-trone img {
+  width: 250px;
+  border-radius: 12px;
+}
+#naissance #T’Challa {
+  background-color: #FFFFFF;
+  position: relative;
+  margin-top: 150px;
+  padding: 230px 20px 10px 30px;
+  right: 100px;
+  width: 340px;
+  height: 600px;
+  border-radius: 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+#naissance #T’Challa .description {
+  color: #000000;
+  width: 410px;
+  height: 600px;
+}
+#naissance #T’Challa .description h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+#naissance #T’Challa .description .tags {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  font-size: 0.8rem;
+}
+#naissance #T’Challa .description .tags span {
+  background-color: #3D2DA6;
+  color: white;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+#naissance #T’Challa .description ul {
+  list-style: none;
+  font-size: 0.82rem;
+  padding: 0;
+  text-align: left;
+}
+#naissance #T’Challa .description ul li {
+  margin-bottom: 8px;
+}
+#naissance .Black-panthere {
+  position: absolute;
+  top: 975px;
+  bottom: 90px;
+  right: 40px;
+  width: 30%;
+}
+
+#contact {
+  background-image: url(../Assets/Accueil/Pantherhome7.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  position: relative;
+  z-index: 1;
+  font-family: "cantarell", "sans-serif";
+}
+#contact .form-container {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.984) 25%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 150px;
+  padding: 50px 40px;
+  color: #000000;
+  width: 1000px;
+  text-align: center;
+  margin: 100px auto;
+}
+#contact .form-container h3 {
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+#contact .form-container h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+#contact .form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+#contact .form-container form input {
+  background-color: transparent;
+  padding: 12px 20px;
+  border: 2px solid #11161e;
+  border-radius: 38px;
+  font-size: 14px;
+  outline: none;
+  width: 520px;
+  height: 56px;
+}
+#contact .form-container form input::-moz-placeholder {
+  color: #000000;
+}
+#contact .form-container form input::placeholder {
+  color: #000000;
+}
+#contact .form-container form textarea {
+  background-color: transparent;
+  padding: 12px 20px;
+  border: 2px solid #11161e;
+  border-radius: 30px;
+  font-size: 14px;
+  outline: none;
+  width: 520px;
+  height: 200px;
+}
+#contact .form-container form textarea::-moz-placeholder {
+  color: #000000;
+}
+#contact .form-container form textarea::placeholder {
+  color: #000000;
+}
+#contact .form-container form button {
+  background-color: #f2cef2;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 38px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#contact .form-container form button:hover {
+  box-shadow: 0 0 20px #021740;
 }
 
 @media all and (max-width: 1200px) {
@@ -260,6 +416,7 @@ body {
     left: 0;
     width: 100%;
     padding: 20px;
+    justify-content: center;
   }
   #personnages .personnages {
     flex-direction: column;

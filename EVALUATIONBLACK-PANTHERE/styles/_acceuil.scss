@@ -73,41 +73,44 @@
   position: relative; 
 
   .personnages {
-    display: flex;
-    gap: 50px;
-  }
+        display: flex;
+        gap: 50px;
 
-  .carte {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    background-color: transparent;
-    color: $white;
-    max-width: 700px; 
+    .carte {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        background-color: transparent;
+        color: $white;
+        max-width: 700px; 
 
-    img {
-    width: 200px; 
-    height: 100%;
-    object-fit: cover;
-    margin-right: 20px;
+        img {
+        width: 200px; 
+        height: 100%;
+        object-fit: cover;
+        margin-right: 20px;
+        }
     }
-  }
 
-  .personnages_description {
-    padding: 30px 0 30px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+    .personnages_description {
+            padding: 30px 0 30px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            h3 {
+            @extend %sous-titre;
+            margin-bottom: 10px;
+            }
+            a {
+                color: $white;
+                margin-top: 6px;
+            }
+        }
+   }
 
-  .personnages_description h3 {
-    @extend %sous-titre;
-    margin-bottom: 10px;
-  }
-
-  // Spécifique à la dernière carte (Shuri)
     .shuri img{
-        width: 157px;
+        width: 162px;
         position: absolute;
     }
 
@@ -116,30 +119,202 @@
 
 
 // design de la partie naissance d'un prince
-#naissance{
+#naissance {
     margin: 0 auto;
     padding-top: 90px; // Espace entre le bloc #personnages et le bloc #naissance
-    padding-left: 120px; // pour aligner avec le reste du contenu
+    padding-left: 180px; // pour aligner avec le reste du contenu
     display: flex;
     justify-content: center; // centre horizontalement le wrapper
+    position: relative; // pour positionner les éléments à l'intérieur
+   
+        .wrapper{
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px; // largeur fixe comme les autres blocs
+            width: 100%;
 
-    .wrapper{
-        display: flex;
-        justify-content: space-between;
-        max-width: 1200px; // largeur fixe comme les autres blocs
-        width: 100%;
+            .content{
+                width: 80%;
 
-        .content{
-            width: 50%;
+                h2{
+                    @extend %sous-titre;
+                    padding: 20px 0;
+                }
 
-            h2{
-                @extend %sous-titre;
-                padding: 20px 0;
+                p{
+                    font-size: 14px;
+                    text-align: justify;
+                    padding: 10px 0;
+                }
             }
-            p{
-                font-size: 14px;
-                text-align: justify;
-                padding: 10px 0;
+        }
+
+        .T’Challa-trone {
+        position: absolute;
+        padding-top: 5px;
+        border-radius: 10px;
+        right: 145px;
+        z-index: 2;
+        
+        img{
+        width: 250px;
+        border-radius: 12px;
+         }
+        }
+
+        #T’Challa {
+            background-color: $white;
+            position: relative;
+            margin-top: 150px;
+            padding: 230px 20px 10px 30px;
+            right: 100px;
+            width: 340px;
+            height: 600px;
+            border-radius: 10px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            
+            .description {
+                color: $black;
+                width: 410px;
+                height: 600px;
+                
+                h3 {
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+                text-align: center;
+                }
+
+                .tags {
+                    display: flex;
+                    justify-content: center;
+                    gap: 8px;
+                    flex-wrap: wrap;
+                    margin-bottom: 15px;
+                    font-size: 0.8rem;
+
+                    span {
+                        background-color: $purple_primary;
+                        color: white;
+                        font-size: 12px;
+                        padding: 4px 10px;
+                        border-radius: 4px;
+                        }
+                }
+
+                ul {
+                    list-style: none;
+                    font-size: 0.82rem;
+                    padding: 0;
+                    text-align: left;
+
+                    li {
+                        margin-bottom: 8px;
+                    }
+                }
+            }            
+        }
+
+        .Black-panthere {
+            position: absolute;
+            top: 975px;
+            bottom: 90px;
+            right: 40px;
+            width: 30%;
+        }
+}
+
+// DESIGN DE LA PARTIE CONTACT
+#contact {
+    background-image: url(../Assets/Accueil/Pantherhome7.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    position: relative;
+    z-index: 1;
+    font-family: 'cantarell', 'sans-serif';
+
+    .form-container {
+        background: linear-gradient( 
+        to bottom,
+        rgba(255, 255, 255, 0.984) 25%,
+        rgba(255, 255, 255, 0.8) 30%,
+        rgba(255, 255, 255, 0.3) 75%,
+        rgba(255, 255, 255, 0) 100%); // Dégradé du blanc vers transparent en vertical
+        border-radius: 150px;
+        padding: 50px 40px;
+        color: $black;
+        width: 1000px;
+        text-align: center;
+        margin: 100px auto;
+
+        h3 {
+        font-size: 11px;
+        margin-bottom: 2px;
+        }
+
+        h2 {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        }
+
+        form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+            input {
+            background-color: transparent;
+            padding: 12px 20px;
+            border: 2px solid #11161e;
+            border-radius: 38px;
+            font-size: 14px;
+            outline: none;
+            width: 520px;
+            height: 56px;
+
+                &::placeholder {
+                    color: $black;
+                }
+            }
+
+            
+            textarea {
+            background-color: transparent;
+            padding: 12px 20px;
+            border: 2px solid #11161e;
+            border-radius: 30px;
+            font-size: 14px;
+            outline: none;
+            width: 520px;
+            height: 200px;
+
+                &::placeholder {
+                    color: $black;
+                }
+            }
+
+            button {
+            background-color: $light_pink;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 38px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+                &:hover {
+                box-shadow: 0 0 20px rgba($blue_dark, 2); // ombre douce en hover
+                }
             }
         }
     }
@@ -179,6 +354,7 @@
     left: 0; // Ne force plus le positionnement vers la droite
     width: 100%;
     padding: 20px;
+    justify-content: center;
 
     .personnages {
       flex-direction: column;
@@ -215,4 +391,8 @@
       max-width: 250px;
     }
   }
+}
+
+@media (min-width: 1240px){
+
 }

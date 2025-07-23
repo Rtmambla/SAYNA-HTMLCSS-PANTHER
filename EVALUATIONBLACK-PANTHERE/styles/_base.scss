@@ -11,6 +11,7 @@
     padding: 0;
     box-sizing: border-box;
     max-width: 100%;
+    
 }
 
 
@@ -20,7 +21,7 @@
     max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
-    
+    overflow: hidden;
 }
 
 // html, body {
@@ -45,7 +46,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover; // ✅ Couvre toute la surface
     font-family: 'cantarell', 'sans-serif';
-    font-size: 16px;
+    font-size: 14px;
     color: $white;
     margin: 0;
     padding: 0;
