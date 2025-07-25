@@ -1,52 +1,97 @@
 footer {
     color: $white;
-    padding: 50px 0;
+    padding: 110px 50px 60px;
     background-color: red;
     background-image: url(../Assets/Allpages/back_footer.png);
     background-position: center;
-    background-size: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+
     .wrapper{
         display: flex;
         justify-content: space-between;
-        text-align: center;
-    }
-    // design des trois cercle
-    .left_side{
-        background-image: url(../Assets/Allpages/back_footer1.png); 
-        background-size: 200px cover;
-        background-repeat: no-repeat;
-        // height: 500px;
-        // width: 500px;
-    img {
-        position: relative;
-        width: 40%;
-        left: -40px;
-        top: 155px;
-        }
-    }
-    .right_side{
-        padding-top: 50 px;
-        .pages{
+        align-items: flex-start;
+        padding: 0 180px;
+        flex-wrap: wrap;
+        
+        .footer-left{
+            flex: 1;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .footer-right {
+            position: absolute;
+            display: flex;
+            margin: 150px 0 0 100px;
+        }
+
+        .footer-center {
+            flex: 2;
+            display: flex;
+            flex-direction: inline;
             align-items: flex-start;
-            margin-right: 150px;
-        }
-        h2{
-            font-size: 30px;
-            padding-bottom: 30px;
-            letter-spacing: 4px;
-        }
-        .retrouvez-nous{
-            text-align: center;
-            img{
-                padding: 0 10px;
+            gap: 250px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            padding-left: 80px;
+
+            .pages{
+
+                h2 {
+                font-size: 20px;
+                letter-spacing: 3px;
+                margin-bottom: 15px;
+                }
+
+                p {
+                font-size: 14px;
+                margin: 5px 0;
+                }
+            }
+
+            .social {
+
+
+                h2 {
+                font-size: 20px;
+                letter-spacing: 3px;
+                margin-bottom: 15px;
+                }
+
+                .social-icons {
+                display: flex;
+                gap: 22px;
+                justify-content: center;
+
+                    img {
+                        width: 42px;
+                        height: 40px;
+                        cursor: pointer;
+                    }
+
+                }
             }
         }
     }
-    p{
-        font-size: 13px;
-        padding-top: 150px;
-        
+
+    .footer-bottom {
+            margin-top: -20px;
+            padding-left: 190px;
+            text-align: center;
+            font-size: 12px;
+
+        a {
+            color: $white;
+            margin: 0 10px;
+            text-decoration: none;
+
+            &:hover {
+                    text-decoration: underline;
+            }
+        }
     }
 }
+

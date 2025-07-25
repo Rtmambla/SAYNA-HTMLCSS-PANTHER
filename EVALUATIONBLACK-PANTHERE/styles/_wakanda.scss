@@ -1,0 +1,41 @@
+#panther{
+    background-image: url(../Assets/Wakanda/Pantherwakanda1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+
+    .description {
+        position: relative;
+        max-width: 500px;
+        margin-top: 40px;
+        right: 250px;
+        
+        h1 {
+        @extend %sous-titre;
+        font-size: 46px;
+        }
+
+        h2 {
+        @extend %sous-titre-wakanda;
+        font-size: 23px;
+        margin-top: 7px;
+        margin-bottom: 20px;
+        word-spacing: 15px;
+        letter-spacing: 7px;
+        }
+
+        p {
+        @extend %texte;
+        max-width: 68%;
+        font-size: 11px;
+        text-align: justify; 
+        }
+    
+    }
+}
