@@ -1,0 +1,208 @@
+// DESIGN DE LA PARTIE ENIGME
+
+#Dora-Milaje{
+    height: calc(100vh - 100px);
+    background-image: url(../Assets/Enigme/Pantherenigme1.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+    width: 65%;
+    background-position:  center right;
+    margin-top: -70px;
+    margin-bottom: 170px;
+    display: flex;
+    position: relative;
+    color: $white;
+
+    .defi {
+        position: relative;
+        margin-top: 230px;
+        margin-left: 780px;
+        margin-right: -437px;
+        
+        h1 {
+        @extend %sous-titre;
+        font-size: 48px;
+        margin-bottom: 150px;
+        margin-right: 160px;
+        letter-spacing: 4px;
+        text-align: justify; 
+        }
+
+        p {
+            @extend %texte;
+            max-width: 67%;
+            font-size: 11px;
+            margin-left: 60px;
+            margin-right: 160px;
+            text-align: justify; 
+            position: relative;   // nécessaire pour placer les ovales
+            z-index: 1;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: -70px;       // décale vers le haut
+                left: -60px;      // décale vers la gauche
+                width: 138%;      // largeur plus grande que le texte
+                height: 200px;    // hauteur de l’ovale
+                // border: 1px solid rgba(27, 12, 160, 0.61); // couleur + transparence
+                border-radius: 80%; // forme ovale
+                transform: rotate(-13deg); // angle
+                z-index: -1; // passe derrière le texte
+                background: linear-gradient(90deg,#df99f2, #07338c);
+                padding: 1px; // épaisseur du trait
+
+                // Technique pour ne garder que la bordure
+                -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+                mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+            }
+
+            &::after {
+                top: -50px;       // décalage différent pour varier
+                left: -70px;
+                width: 138%;
+                height: 200px;
+                transform: rotate(1deg);
+                background: linear-gradient(to bottom, #df99f2,  #07338c);
+                padding: 1px; // épaisseur du trait
+
+                // Technique pour ne garder que la bordure
+                -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+                mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+            }
+        }
+    }
+
+    .barre-gauche {
+            position: absolute;
+            bottom: -30px;   // distance du bas
+            left: 800px;     // distance du bord gauche
+            width: 720px;   // longueur de la barre
+            height: 2px;    // épaisseur
+
+            background: linear-gradient(to right, #3D2DA6, #021740);
+            border-radius: 2px; // arrondi léger
+    }
+}
+
+#enigme{
+    margin-left: 220px;
+    margin-right: 450px;
+    h2{
+        @extend %sous-titre-wakanda;
+        font-size: 25px;
+        margin-bottom: 30px;
+        letter-spacing: 10px;
+        word-spacing: 2px;
+        padding-bottom: 50px;
+        
+        span {
+            display: block; // force chaque phrase sur une nouvelle ligne
+            &:not(:last-child) {
+            margin-bottom: 15px; // espace entre les phrases
+            }
+        }
+    }
+
+    .alphabet-wakandais {
+        margin-bottom: 20px;
+        p {
+            @extend %texte;
+            font-size: 12px;
+            text-align: justify; 
+            margin-right: 300px;
+            margin-bottom: 15px; // limite la largeur
+        }
+        .wakanda-map {
+            display: flex;
+            flex-wrap: wrap; // permet de revenir à la ligne si c’est trop long
+            gap: 5px;       // espace entre chaque paire A = ꔀ ;
+            font-size: 11px;
+            margin-right: 375px;
+            color: $white;
+
+            .latin {
+                font-weight: bold;
+            }
+
+            .wakanda {
+                font-family: 'Wakanda', 'sans relief';
+                font-size: 15px;
+                color: $white;
+            }
+        }
+    }
+
+    .culture-generale {
+        p {
+            @extend %texte;
+            max-width: 67%;
+            font-size: 11px;
+            margin-left: 620px;
+            margin-right: -170px;
+            margin-bottom: 30px;
+            text-align: center; 
+            position: relative;   // nécessaire pour placer les ovales
+            z-index: 1;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: -70px;       // décale vers le haut
+                left: -60px;      // décale vers la gauche
+                width: 138%;      // largeur plus grande que le texte
+                height: 200px;    // hauteur de l’ovale
+                // border: 1px solid rgba(27, 12, 160, 0.61); // couleur + transparence
+                border-radius: 80%; // forme ovale
+                transform: rotate(-13deg); // angle
+                z-index: -1; // passe derrière le texte
+                background: linear-gradient(90deg,#df99f2, #07338c);
+                padding: 1px; // épaisseur du trait
+
+                // Technique pour ne garder que la bordure
+                -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+                mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+            }
+
+            &::after {
+                top: -50px;       // décalage différent pour varier
+                left: -70px;
+                width: 138%;
+                height: 200px;
+                transform: rotate(1deg);
+                background: linear-gradient(to bottom, #df99f2,  #07338c);
+                padding: 1px; // épaisseur du trait
+
+                // Technique pour ne garder que la bordure
+                -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+                mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+            }
+        }
+    }
+}

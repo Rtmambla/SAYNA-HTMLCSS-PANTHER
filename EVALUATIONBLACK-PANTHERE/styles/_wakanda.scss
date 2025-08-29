@@ -9,12 +9,15 @@
     align-items: center;
     justify-content: center;
     color: $white;
+    
+
 
     .description {
         position: relative;
         max-width: 500px;
         margin-top: 40px;
-        right: 250px;
+        margin-right: 500px;
+        right: 2px;
         
         h1 {
         @extend %sous-titre;
@@ -37,5 +40,75 @@
         text-align: justify; 
         }
     
+    }
+}
+
+// DESIGN ORIGINE, CINEMA, CULTURE
+
+#origine{
+    background-image:url(../Assets/Wakanda/Pantherwakanda2.png);
+    background-repeat: no-repeat;
+    background-size: 90%;
+    padding-left: 190px; // pour aligner avec le reste du contenu
+    margin-top: -60px;
+    margin-left: 150px;
+    margin-bottom: 200px;
+    position: relative;
+    z-index: -2;
+
+    
+
+    .wrapper {
+    position: relative;
+    z-index: 1;
+    color: $white;
+    margin-bottom: 40px;
+    top: 140px;
+    right: 170px;
+
+    display: flex;              // ✅ active Flexbox
+    justify-content: space-between; // espace entre .origine et .story
+    align-items: flex-start;    // aligne en haut
+
+        .origine,
+        .story {
+        flex: 1;                  // prend 50% chacune
+        max-width: 100%; 
+        margin: 0 60px;           // espace entre les deux
+            h2 {
+            @extend %sous-titre;
+            font-size: 20px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            }
+
+            p {
+            @extend %texte;
+            max-width: 100%;
+            font-size: 11px;
+            text-align: justify; 
+            margin-bottom: 15px; // limite la largeur
+            }  
+
+            .lien {
+                background-color: $purple_primary;
+                margin-top: 50px;
+                padding: 35px 10px 90px 30px;
+                p { 
+                    font-size: 14px;
+                    text-align: justify;
+                    
+                    a {
+                    @extend %texte;  
+                    font-size: 14px; 
+                    text-decoration: none;
+                    padding: 10px 0;                  // espace autour du texte
+                    border-radius: 6px;                 // coins arrondis
+                    display: inline-block;              // pour que le background suive le bloc
+                    margin-top: 3px;                    // petit espace entre plusieurs liens
+                    } 
+                }
+            }
+        }          
     }
 }
