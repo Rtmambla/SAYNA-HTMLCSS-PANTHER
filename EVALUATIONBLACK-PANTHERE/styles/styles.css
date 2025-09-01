@@ -473,6 +473,7 @@ body {
   display: flex;
   position: relative;
   color: #FFFFFF;
+  z-index: -1;
 }
 #Dora-Milaje .defi {
   position: relative;
@@ -617,6 +618,45 @@ body {
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
+}
+#enigme .form-container {
+  margin-bottom: 150px;
+}
+#enigme .form-container p {
+  margin-bottom: 15px;
+}
+#enigme .form-container input {
+  width: 450px;
+  height: 50px;
+  margin-bottom: 70px;
+  border-radius: 38px;
+  border: 1px solid #f2cef2;
+  padding: 0 15px;
+  font-size: 14px;
+  background: transparent;
+  color: #FFFFFF;
+}
+#enigme .form-container input::-moz-placeholder {
+  color: #f2cef2;
+  font-size: 14px;
+}
+#enigme .form-container input::placeholder {
+  color: #f2cef2;
+  font-size: 14px;
+}
+#enigme .form-container button {
+  margin-left: 140px;
+  background-color: #f2cef2;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 38px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#enigme .form-container button:hover {
+  box-shadow: 0 0 10px #f2cef2;
 }
 
 #panther {
@@ -778,16 +818,26 @@ footer .wrapper .footer-center .social .social-icons img {
   cursor: pointer;
 }
 footer .footer-bottom {
-  margin-top: -20px;
-  padding-left: 190px;
+  margin-top: -90px;
+  margin-bottom: 60px;
+  padding-left: 210px;
   text-align: center;
   font-size: 12px;
 }
 footer .footer-bottom a {
   color: #FFFFFF;
-  margin: 0 10px;
+  margin: 0 2px;
   text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 footer .footer-bottom a:hover {
   text-decoration: underline;
+  opacity: 1;
+}
+footer .footer-bottom .dot {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 0.1rem;
+  color: #df99f2;
 }/*# sourceMappingURL=styles.css.map */

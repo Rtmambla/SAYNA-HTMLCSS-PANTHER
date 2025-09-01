@@ -12,6 +12,7 @@
     display: flex;
     position: relative;
     color: $white;
+    z-index: -1; 
 
     .defi {
         position: relative;
@@ -205,4 +206,46 @@
             }
         }
     }
+
+    .form-container {
+        margin-bottom: 150px;
+
+        p{
+            margin-bottom: 15px;
+        }
+
+        input{
+            width: 450px;
+            height: 50px;
+            margin-bottom: 70px;
+            border-radius: 38px;
+            border: 1px solid $light_pink;
+            padding: 0 15px;
+            font-size: 14px;
+            background: transparent;
+            color: $white;
+
+             &::placeholder {
+                color: $light_pink;
+                font-size: 14px;
+            }
+        }
+
+        button {
+            margin-left: 140px;
+            background-color: $light_pink;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 38px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+            box-shadow: 0 0 10px rgba($light_pink, 1); // ombre douce en hover
+            }
+        }
+    }
+
 }

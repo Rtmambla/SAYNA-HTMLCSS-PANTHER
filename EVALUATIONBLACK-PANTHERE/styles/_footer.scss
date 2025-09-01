@@ -78,19 +78,30 @@ footer {
     }
 
     .footer-bottom {
-            margin-top: -20px;
-            padding-left: 190px;
+            margin-top: -90px;
+            margin-bottom: 60px;
+            padding-left: 210px;
             text-align: center;
             font-size: 12px;
 
         a {
             color: $white;
-            margin: 0 10px;
+            margin: 0 2px;
             text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
 
             &:hover {
-                    text-decoration: underline;
+                text-decoration: underline;
+                opacity: 1; // plus visible au survol
             }
+        }
+
+        .dot {
+                font-size: 30px;
+                font-weight: bold;
+                margin: 0 0.1rem;
+                color: $pink;
         }
     }
 }
