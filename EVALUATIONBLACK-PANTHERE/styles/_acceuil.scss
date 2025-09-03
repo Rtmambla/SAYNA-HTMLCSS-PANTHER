@@ -19,9 +19,10 @@
                 padding: 15px 0;
             }
             p{
-                font-size: 16px;
+                font-size: 11px;
                 margin-top: 10px;
-                width: 79%;
+                padding-right: 55px;
+                width: 77%;
             }
             a{
                 display: inline-block;  
@@ -84,20 +85,20 @@
         background-color: transparent;
         color: $white;
         max-width: 700px; 
+        position: relative;
 
         img {
-        width: 200px; 
-        height: 100%;
-        object-fit: cover;
-        margin-right: 20px;
+            width: 200px; 
+            height: 100%;
+            object-fit: cover;
+            margin-right: 20px;
+            transition: transform 0.6s ease-in-out; // animation fluide
+            cursor: pointer; // curseur main au survol
 
-        //    .Killmonger{
-        //     display: flex;
-        //     width: 1200px;
-        //    }
-
+            &:hover {
+            transform: scale(1.2); // agrandit l’image à 120%
+            }
         }
-
     }
 
     .personnages_description {
@@ -120,8 +121,13 @@
     .shuri img{
         width: 151px;
         position: absolute;
-    }
+        transition: transform 0.4s ease-in-out; // animation fluide
+        cursor: pointer; // curseur main au survol
 
+        &:hover {
+        transform: scale(1.2); // agrandit l’image à 120%
+        }
+    }
 }
 
 
@@ -368,18 +374,24 @@
       flex-direction: column;
       align-items: center;
       gap: 30px;
+      width: 100%;
     }
 
     .carte {
       flex-direction: column;
       align-items: center;
       text-align: center;
+      width: 100%;
+      max-width: 400px;      // limite pour éviter de déborder
+      gap: 15px;
 
       img {
-        width: 300px; 
-        height: 100%;
+        width: 100%; 
+        max-width: 300px; // Limite la taille maximale de l'image
+        height: auto;
         object-fit: cover;
-        margin-right: 20px;
+        margin: 0 auto;
+        
         // margin-right: 0;
         // margin-bottom: 15px;
         // width: 100%;
@@ -389,8 +401,10 @@
     }
 
     .personnages_description {
-      padding: 0;
+      padding: 10px;
+      text-align: center;
       align-items: center;
+      display: flex;
     }
 
     .shuri img {
