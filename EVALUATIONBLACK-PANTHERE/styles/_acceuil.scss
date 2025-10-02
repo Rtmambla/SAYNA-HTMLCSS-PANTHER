@@ -1,420 +1,368 @@
-// DESIGN DE LA PARTIE BLACK PANTHER ACCUEIL
-#hero{
-    height: calc(100vh - 100px);
-    background-image: url(../Assets/Accueil/Pantherhome1.png);
-    background-repeat: no-repeat;
-    background-size: 68%;
-    background-position:  center right;
-    .hero_wrapper{ // Position par rapport au background-image: url(../Assets/Accueil/Pantherhome1.png);
-        .hero_content{ 
-            left: 200px;
-            width: 36%;
-            position: absolute;
-            top: 35%;
-            h1{
-                @extend %titre; // Va chercher l'Héritage dans _base.scss 
-            }
-            h2{
-                @extend %sous-titre; 
-                padding: 15px 0;
-            }
-            p{
-                font-size: 11px;
-                margin-top: 10px;
-                padding-right: 55px;
-                width: 77%;
-            }
-            a{
-                display: inline-block;  
-                margin-top: 15Px;
-                font-size: 11px;
-                color: $white;
-            }
-        }
-    }
-}
+/* Main container - Use Flexbox for flexible layout */
 
-
-// DESIGN DE LA PARTIE SCROLL
-.scroll{
-    .left-bar{
-        border-left: 4px solid $gray;
-        height: 425px;
-        position: absolute; // Il ne bouge pas de sa position
-        left: 30px; 
-        top: 0; // Dépasse la navbar
-    }
-    .mini-left-bar{
-        @extend .left-bar; // Va reproduire le même design que .left-bar sauf 'height' et 'left'
-        height: 285px;
-        left: 55px; 
-    }
-    .social {
-        display: flex; // Pour permettre aux icones de se déplacer (flexible)
-        flex-direction: column;
-        left: 45px; 
-        position: absolute;
-        gap: 20px; // ✅ ajoute de l'espace entre les icônes
-        top: 300px;
-        color: $gray; // ou #a59bb5 si tu n’as pas défini $gray
-    }
-    .social:hover{
-        color: $white;  
-        cursor: pointer;
-    }
-}
-
-// DESIGN DE LA PARTIE PERSONNAGES
-#personnages {
-  background-color: $blue_dark;
-  left: 145px; // Positionne le bloc à gauche
-  width: 1209px;
-  display: flex;
-  gap: 50px;
-  position: relative; 
-
-  .personnages {
-        display: flex;
-        gap: 50px;
-        padding-left: 25px;
-
-    .carte {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        background-color: transparent;
-        color: $white;
-        max-width: 700px; 
-        position: relative;
-
-        img {
-            width: 200px; 
-            height: 100%;
-            object-fit: cover;
-            margin-right: 20px;
-            transition: transform 0.6s ease-in-out; // animation fluide
-            cursor: pointer; // curseur main au survol
-
-            &:hover {
-            transform: scale(1.2); // agrandit l’image à 120%
-            }
-        }
-    }
-
-    .personnages_description {
-            padding: 30px 0 30px 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            
-            h3 {
-            @extend %sous-titre;
-            margin-bottom: 10px;
-            }
-            a {
-                color: $white;
-                margin-top: 6px;
-            }
-        }
-   }
-
-    .shuri img{
-        width: 151px;
-        position: absolute;
-        transition: transform 0.4s ease-in-out; // animation fluide
-        cursor: pointer; // curseur main au survol
-
-        &:hover {
-        transform: scale(1.2); // agrandit l’image à 120%
-        }
-    }
-}
-
-
-
-// design de la partie naissance d'un prince
-#naissance {
+.container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding-top: 90px; // Espace entre le bloc #personnages et le bloc #naissance
-    padding-left: 180px; // pour aligner avec le reste du contenu
+    padding: 1rem;
     display: flex;
-    justify-content: center; // centre horizontalement le wrapper
-    position: relative; // pour positionner les éléments à l'intérieur
-   
-        .wrapper{
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px; // largeur fixe comme les autres blocs
-            width: 100%;
-
-            .content{
-                width: 80%;
-
-                h2{
-                    @extend %sous-titre;
-                    padding: 20px 0;
-                }
-
-                p{
-                    font-size: 14px;
-                    text-align: justify;
-                    padding: 10px 0;
-                }
-            }
-        }
-
-        .T’Challa-trone {
-        position: absolute;
-        padding-top: 5px;
-        border-radius: 10px;
-        right: 145px;
-        z-index: 2;
-        
-        img{
-        width: 250px;
-        border-radius: 12px;
-         }
-        }
-
-        #T’Challa {
-            background-color: $white;
-            position: relative;
-            margin-top: 150px;
-            padding: 230px 20px 10px 30px;
-            right: 100px;
-            width: 340px;
-            height: 600px;
-            border-radius: 10px;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            
-            .description {
-                color: $black;
-                width: 410px;
-                height: 600px;
-                
-                h3 {
-                font-size: 1.3rem;
-                margin-bottom: 10px;
-                text-align: center;
-                }
-
-                .tags {
-                    display: flex;
-                    justify-content: center;
-                    gap: 8px;
-                    flex-wrap: wrap;
-                    margin-bottom: 15px;
-                    font-size: 0.8rem;
-
-                    span {
-                        background-color: $purple_primary;
-                        color: white;
-                        font-size: 12px;
-                        padding: 4px 10px;
-                        border-radius: 4px;
-                        }
-                }
-
-                ul {
-                    list-style: none;
-                    font-size: 0.82rem;
-                    padding: 0;
-                    text-align: left;
-
-                    li {
-                        margin-bottom: 8px;
-                    }
-                }
-            }            
-        }
-
-        .Black-panthere {
-            position: absolute;
-            top: 975px;
-            bottom: 90px;
-            right: 40px;
-            width: 30%;
-        }
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
-// DESIGN DE LA PARTIE CONTACT
-#contact {
-    background-image: url(../Assets/Accueil/Pantherhome7.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    min-height: 100vh;
+/* Theme section */
+.section1 {
     display: flex;
-    justify-content: center;
+    flex-wrap: nowrap; 
     align-items: center;
-    padding: 50px 20px;
+    // nowrap (restent sur une seule ligne)
+    //wrap (passent à la ligne si besoin), wrap-reverse (passent à la ligne si besoin, mais dans l’autre sens)
+    background-color: $transparent; 
     position: relative;
-    z-index: 1;
-    font-family: 'cantarell', 'sans-serif';
+    //  border-radius: 8px;
+    // box-shadow: 0 2px 5px $black; 
 
-    .form-container {
-        background: linear-gradient( 
-        to bottom,
-        rgba(255, 255, 255, 0.984) 25%,
-        rgba(255, 255, 255, 0.8) 30%,
-        rgba(255, 255, 255, 0.3) 75%,
-        rgba(255, 255, 255, 0) 100%); // Dégradé du blanc vers transparent en vertical
-        border-radius: 150px;
-        padding: 50px 40px;
-        color: $black;
-        width: 1000px;
-        text-align: center;
-        margin: 100px auto;
+    .theme1 {
+        flex: 1 1 50%; // occupe 50% de la largeur
+        margin-top: -4rem; // remonter la section
+        margin-left: 3rem;
+        position: relative;
+        z-index: 1;       
 
-        h3 {
-        font-size: 11px;
-        margin-bottom: 2px;
+        h1 {
+            @extend %titre;
+            font-size: 3.4em;
+            margin-right: -5rem;
         }
 
         h2 {
-        font-size: 28px;
-        font-weight: bold;
-        margin-bottom: 30px;
+            @extend %sous-titre; 
+            padding: 0.9375rem 0; // 15px → 0.9375rem
+            margin-bottom: 1rem;
         }
 
-        form {
+        p {
+            @extend %texte;
+            word-spacing: -0.1em;
+            font-size: 0.775em;
+            margin-top: 0.1rem; // 10px → 0.625rem
+            margin-right: 0.1rem;         
+        }
+
+        a {
+            display: inline-block;  
+            margin-top: 0.9375rem; // 15px → 0.9375rem
+            font-size: 0.6875rem;  // 11px → 0.6875rem
+            color: $white;
+        }      
+    }  
+
+    .theme2 {
+        margin-top: -1rem; // remonter la section
+        flex: 1 1 100%;
         display: flex;
-        flex-direction: column;
-        gap: 20px;
+        justify-content: center;
         align-items: center;
+        position: relative;
+        z-index: 2;   // image au-dessus (premier plan)
 
-            input {
-            background-color: transparent;
-            padding: 12px 20px;
-            border: 2px solid #11161e;
-            border-radius: 38px;
-            font-size: 14px;
-            outline: none;
-            width: 520px;
-            height: 56px;
-
-                &::placeholder {
-                    color: $black;
-                }
-            }
-
-            
-            textarea {
-            background-color: transparent;
-            padding: 12px 20px;
-            border: 2px solid #11161e;
-            border-radius: 30px;
-            font-size: 14px;
-            outline: none;
-            width: 520px;
-            height: 200px;
-
-                &::placeholder {
-                    color: $black;
-                }
-            }
-
-            button {
-            background-color: $light_pink;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 38px;
-            font-weight: bold;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-
-                &:hover {
-                box-shadow: 0 0 20px rgba($blue_dark, 2); // ombre douce en hover
-                }
-            }
+        img {
+            max-width: 100%;  // s’adapte à la largeur du parent
+            height: auto;     // garde les proportions 
+            object-fit: contain; /* garde proportions */
         }
     }
 }
 
-// DESIGN POUR TOUT TYPED'ECRAN
-@media all and (max-width: 1200px) {
-  #hero{
-    background-size: cover; // ✅ Couvre toute la surface
-    background-position: top center;
-    background-size: 68%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    .hero_wrapper {
-      position: relative;
-      .hero_content {
-        position: static;
-        width: 90%;
-        margin: 150px auto;
-        text-align: center;
-        h1 {
-          font-size: 36px;
-        }
-        p, a {
-          margin-left: auto;
-          margin-right: auto;
-        }
-      }
-    }
-  }
-}
 
-@media (max-width: 1250px) {
-  #personnages {
-    flex-direction: column;
-    align-items: center;
-    left: 0; // Ne force plus le positionnement vers la droite
-    width: 100%;
-    padding: 20px;
-    justify-content: center;
+// Cartes de personnages — Flexbox façon grille
 
-    .personnages {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-      width: 100%;
-    }
-
-    .carte {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      width: 100%;
-      max-width: 400px;      // limite pour éviter de déborder
-      gap: 15px;
-
-      img {
-        width: 100%; 
-        max-width: 300px; // Limite la taille maximale de l'image
+.section2 {
+    .character {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        gap: 20px;
+        background-color: $blue_dark;
+        font-size: 0.875em;
+        text-align: justify;
         height: auto;
-        object-fit: cover;
-        margin: 0 auto;
-        
-        // margin-right: 0;
-        // margin-bottom: 15px;
-        // width: 100%;
-        // max-width: 250px;
-        // height: auto;
-      }
+        width: 115%;
+        margin: 0% 0% 3% 0%;
+
+        .img1sec2 {
+            display: block;
+            width: 18.15%;
+            max-width: 386px;
+            margin: 0% 0% 0% 5%;
+        }
+
+        .img2sec2 {
+            display: block;
+            width: 18.15%;
+            max-width: 296px;
+        }
+
+        .img3sec2 {
+            display: block;
+            width: 13.3%;
+            max-width: 217px;
+        }
+
+        h2 {
+            @extend %sous-titre;
+            margin-bottom: 0.7rem ; 
+        }
+
+        p {
+            @extend %texte;
+            text-align: justify;
+            margin-bottom: 0.2rem ; 
+        }
+
+        a {
+                color: $white;
+        }
+    }
+}
+
+/* stories cards - Flexbox for grid-like layout */
+
+.section3{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+
+    .story {
+        flex: 1 1 300px; /* S’agrandit ou se rétrécit, minimum 300px */
+        background: transparent;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        position: relative; /* Pour tout élément interne en position absolute */
+    }
+    
+    h2 {
+    @extend %sous-titre;
+    margin-bottom: 1rem
     }
 
-    .personnages_description {
-      padding: 10px;
-      text-align: center;
-      align-items: center;
-      display: flex;
+    p {
+        @extend %texte;
+        font-size: 0.78em; 
+        margin-bottom: 1rem;
+        text-align: justify;
     }
 
-    .shuri img {
-      position: static; // Supprime le positionnement absolu sur mobile
+
+    .div1aside {
+        display: flex;
+        align-items: center;
+        flex-flow: column;
+
+        .div2aside {
+            font-size: 0.875em;
+            position: relative;
+            background-color: $white;
+            color: $blue_dark;
+            width: 50%;
+            height: auto;
+            box-sizing: content-box;
+            padding: 0% 8.8% 23.5%;
+            margin: 20% 0% 23.5% 20%;
+            border-radius: 10px;
+
+
+            .div3aside {
+                margin-bottom: 5%;
+                img {
+                    margin-top: -30%;
+                    width: 100%;
+                    height: auto;
+                    border-radius: 4px;
+                }
+            }
+
+            aside {
+                
+                h2{
+                    font-family: 'cantarell', 'sans-serif';
+                    text-align: center;
+                    color: $black;
+                }
+
+                .buttonaside {
+
+                    display: flex;
+                    gap: 0.625rem;          /* 8px */
+
+                    button {
+                        background-color: $purple_primary;
+                        color: $white;
+                        font-family: 'cantarell', 'sans-serif';
+                        font-size: 0.7rem;
+                        padding: 0.35rem;
+                        border-radius: 0.25rem;
+                    }
+                }
+
+                .infoaside {
+
+                    dl {
+                        display: flex;
+                        flex-flow: column;
+                        margin: 1.5rem 0 0;
+
+                        dt, dd {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+        } 
+    }
+}
+
+
+/* Media Queries for different resolutions */
+@media screen and (max-width: 1210px) {
+    .section2 .character {
+        min-width: 1120px;
+    }
+}
+
+@media screen and (max-width: 1295px) {
+    .section2 .character {
+        margin: 0% 0% 3% 3%;
+    }
+}
+
+/* Scrollbar styling for overflow in section2 */
+@media screen and (max-width: 1210px) {
+    .section2 {
+        overflow-x: scroll;
+        scrollbar-width: thin;
+        /* For Firefox */
+        scrollbar-color: #9E91B7 #021740;
+
+        /* For Chrome, Safari, Edge */
+        &::-webkit-scrollbar {
+            height: 8px;
+            background: #021740;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #9E91B7;
+            border-radius: 4px;
+        }
+    }
+}
+
+/* La section concernant les deux positions colonnes */
+@media (max-width: 1000px) {
+  .section3 {
+    flex-direction: column;
+    gap: 1rem;
+
+    .story {
       width: 100%;
-      max-width: 250px;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-bottom: 20%;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .div1aside {
+      width: 100%;
+
+      .div2aside {
+        width: 90%;
+        padding: 10% 5% 20%;
+        margin: 1rem auto;
+        font-size: 0.8rem;
+
+        .buttonaside {
+          flex-wrap: wrap;
+          justify-content: center;
+
+          button {
+            font-size: 0.6rem;
+            padding: 0.3rem 0.5rem;
+          }
+        }
+
+        aside .infoaside dl {
+          font-size: 0.75rem;
+        }
+      }
+
+      .div4aside img {
+        width: 90%;
+        height: auto;
+      }
     }
   }
 }
 
-@media (min-width: 1240px){
 
+@media all and (max-width: 768px) {
+    .container {
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+    .character {
+        flex: 1 1 100%; /* Stack vertically on tablet/mobile */
+        padding: 1rem;
+    }
+    .character h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media all and (max-width: 850px) {
+
+    .section1 {
+        padding: 1rem;
+        flex-direction: column; /* empile les éléments verticalement */
+        align-items: center;    /* centre horizontalement */
+        
+        .theme1 {
+
+            order: 2; /* texte en premier */
+            margin: 0 auto;      /* centre horizontalement */
+            text-align: center;  /* centre le texte */
+            
+            h1 {
+            margin: 2rem auto;   /* annule le margin-right négatif */
+            font-size: 1.8rem;   /* taille adaptée */
+            margin-bottom: 0.3rem; /* espace en dessous */
+            }
+
+            h2, p, a {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center; /* centre aussi les autres textes */
+            }
+        }
+
+        .theme2 {
+            order: 1; /* image en second */
+            margin: 1rem auto; /* centre horizontalement */
+
+            img {
+                width: 80%; /* pour qu’elle soit bien proportionnée */
+            }
+        }
+    }
+
+    .characters {
+            gap: 1rem;
+    }
+    /* Prevent any remaining overlaps by ensuring relative positioning */
+    .character {
+        position: static; /* Override any absolute if present */
+    }
 }

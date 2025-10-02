@@ -15,57 +15,55 @@
   font-family: "Cantarell";
   src: url("../Assets/Police/Cantarell-Regular.ttf") format("truetype");
 }
+/* Global resets for responsiveness */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  max-width: 100%;
 }
 
-.container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
-  overflow: hidden;
+html, body {
+  overflow-x: hidden;
 }
 
 body {
   background: radial-gradient(126.67% 350.28% at -17.35% 0%, #0c1b37 10%, #080808 39.1%, rgba(2, 20, 55, 0.838) 94.57%, rgba(2, 23, 64, 0) 100%);
+  background-attachment: fixed;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "cantarell", "sans-serif";
-  font-size: 14px;
+  font-size: 0.9em;
   color: #FFFFFF;
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
-#hero .hero_wrapper .hero_content h1 {
+.section1 .theme1 h1 {
   font-family: "Panthera", "sans relief";
-  font-size: 50px;
+  font-size: 3.125em;
   color: #9e91b7;
 }
 
 #origine .wrapper .origine h2,
-#origine .wrapper .story h2, #panther .description h1, #Dora-Milaje .defi h1, #naissance .wrapper .content h2, #personnages .personnages .personnages_description h3, #hero .hero_wrapper .hero_content h2 {
+#origine .wrapper .story h2, #panther .description h1, #Dora-Milaje .defi h1, .section3 h2, .section2 .character h2, .section1 .theme1 h2 {
   font-family: "Beyno", "sans relief";
-  font-size: 22px;
+  font-size: 1.375em;
   color: #9e91b7;
 }
 
 #panther .description h2, #enigme h2 {
   font-family: "Wakanda", "sans relief";
-  font-size: 30px;
+  font-size: 1.875em;
   color: #9e91b7;
 }
 
 #origine .wrapper .origine .lien p a,
 #origine .wrapper .story .lien p a, #origine .wrapper .origine p,
-#origine .wrapper .story p, #panther .description p, #enigme .culture-generale p, #enigme .alphabet-wakandais p, #Dora-Milaje .defi p {
+#origine .wrapper .story p, #panther .description p, #enigme .culture-generale p, #enigme .alphabet-wakandais p, #Dora-Milaje .defi p, .section3 p, .section2 .character p, .section1 .theme1 p {
   font-family: "cantarell", "sans-serif";
-  font-size: 16px;
+  font-size: 0.875em;
   color: #FFFFFF;
 }
 
@@ -73,8 +71,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
-  width: 1100px;
+  padding: 1rem 0;
+  width: 100%;
 }
 .navbar_brand {
   display: flex;
@@ -86,9 +84,9 @@ body {
   text-decoration: none;
   color: #FFFFFF;
   margin: 0 2rem;
-  padding-left: 12px;
+  padding-left: 0.75rem;
   font-family: "beyno", "sans relief";
-  font-size: 15px;
+  font-size: 0, 9em;
 }
 .navbar_link:hover {
   text-decoration: underline;
@@ -99,7 +97,7 @@ body {
   color: #9e91b7;
 }
 
-@media all and (max-width: 1250px) {
+@media all and (max-width: 780px) {
   .navbar {
     text-align: center;
     flex-direction: column;
@@ -126,358 +124,298 @@ body {
     border-bottom: none;
   }
 }
-#hero {
-  height: calc(100vh - 100px);
-  background-image: url(../Assets/Accueil/Pantherhome1.png);
-  background-repeat: no-repeat;
-  background-size: 68%;
-  background-position: center right;
-}
-#hero .hero_wrapper .hero_content {
-  left: 200px;
-  width: 36%;
-  position: absolute;
-  top: 35%;
-}
-#hero .hero_wrapper .hero_content h2 {
-  padding: 15px 0;
-}
-#hero .hero_wrapper .hero_content p {
-  font-size: 11px;
-  margin-top: 10px;
-  padding-right: 55px;
-  width: 77%;
-}
-#hero .hero_wrapper .hero_content a {
-  display: inline-block;
-  margin-top: 15Px;
-  font-size: 11px;
-  color: #FFFFFF;
-}
-
-.scroll .left-bar, .scroll .mini-left-bar {
-  border-left: 4px solid #9e91b7;
-  height: 425px;
-  position: absolute;
-  left: 30px;
-  top: 0;
-}
-.scroll .mini-left-bar {
-  height: 285px;
-  left: 55px;
-}
-.scroll .social {
-  display: flex;
-  flex-direction: column;
-  left: 45px;
-  position: absolute;
-  gap: 20px;
-  top: 300px;
-  color: #9e91b7;
-}
-.scroll .social:hover {
-  color: #FFFFFF;
-  cursor: pointer;
-}
-
-#personnages {
-  background-color: #021740;
-  left: 145px;
-  width: 1209px;
-  display: flex;
-  gap: 50px;
-  position: relative;
-}
-#personnages .personnages {
-  display: flex;
-  gap: 50px;
-  padding-left: 25px;
-}
-#personnages .personnages .carte {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  background-color: transparent;
-  color: #FFFFFF;
-  max-width: 700px;
-  position: relative;
-}
-#personnages .personnages .carte img {
-  width: 200px;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-right: 20px;
-  transition: transform 0.6s ease-in-out;
-  cursor: pointer;
-}
-#personnages .personnages .carte img:hover {
-  transform: scale(1.2);
-}
-#personnages .personnages .personnages_description {
-  padding: 30px 0 30px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#personnages .personnages .personnages_description h3 {
-  margin-bottom: 10px;
-}
-#personnages .personnages .personnages_description a {
-  color: #FFFFFF;
-  margin-top: 6px;
-}
-#personnages .shuri img {
-  width: 151px;
-  position: absolute;
-  transition: transform 0.4s ease-in-out;
-  cursor: pointer;
-}
-#personnages .shuri img:hover {
-  transform: scale(1.2);
-}
-
-#naissance {
-  margin: 0 auto;
-  padding-top: 90px;
-  padding-left: 180px;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-#naissance .wrapper {
-  display: flex;
-  justify-content: space-between;
+/* Main container - Use Flexbox for flexible layout */
+.container {
   max-width: 1200px;
-  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
-#naissance .wrapper .content {
-  width: 80%;
+
+/* Theme section */
+.section1 {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
 }
-#naissance .wrapper .content h2 {
-  padding: 20px 0;
+.section1 .theme1 {
+  flex: 1 1 50%;
+  margin-top: -4rem;
+  margin-left: 3rem;
+  position: relative;
+  z-index: 1;
 }
-#naissance .wrapper .content p {
-  font-size: 14px;
-  text-align: justify;
-  padding: 10px 0;
+.section1 .theme1 h1 {
+  font-size: 3.4em;
+  margin-right: -5rem;
 }
-#naissance .T’Challa-trone {
-  position: absolute;
-  padding-top: 5px;
-  border-radius: 10px;
-  right: 145px;
+.section1 .theme1 h2 {
+  padding: 0.9375rem 0;
+  margin-bottom: 1rem;
+}
+.section1 .theme1 p {
+  word-spacing: -0.1em;
+  font-size: 0.775em;
+  margin-top: 0.1rem;
+  margin-right: 0.1rem;
+}
+.section1 .theme1 a {
+  display: inline-block;
+  margin-top: 0.9375rem;
+  font-size: 0.6875rem;
+  color: #FFFFFF;
+}
+.section1 .theme2 {
+  margin-top: -1rem;
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   z-index: 2;
 }
-#naissance .T’Challa-trone img {
-  width: 250px;
-  border-radius: 12px;
+.section1 .theme2 img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain; /* garde proportions */
 }
-#naissance #T’Challa {
-  background-color: #FFFFFF;
-  position: relative;
-  margin-top: 150px;
-  padding: 230px 20px 10px 30px;
-  right: 100px;
-  width: 340px;
-  height: 600px;
-  border-radius: 10px;
-  z-index: 1;
+
+.section2 .character {
   display: flex;
-  flex-direction: column;
+  flex-flow: row;
+  align-items: center;
+  gap: 20px;
+  background-color: #021740;
+  font-size: 0.875em;
+  text-align: justify;
+  height: auto;
+  width: 115%;
+  margin: 0% 0% 3% 0%;
 }
-#naissance #T’Challa .description {
-  color: #000000;
-  width: 410px;
-  height: 600px;
+.section2 .character .img1sec2 {
+  display: block;
+  width: 18.15%;
+  max-width: 386px;
+  margin: 0% 0% 0% 5%;
 }
-#naissance #T’Challa .description h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  text-align: center;
+.section2 .character .img2sec2 {
+  display: block;
+  width: 18.15%;
+  max-width: 296px;
 }
-#naissance #T’Challa .description .tags {
+.section2 .character .img3sec2 {
+  display: block;
+  width: 13.3%;
+  max-width: 217px;
+}
+.section2 .character h2 {
+  margin-bottom: 0.7rem;
+}
+.section2 .character p {
+  text-align: justify;
+  margin-bottom: 0.2rem;
+}
+.section2 .character a {
+  color: #FFFFFF;
+}
+
+/* stories cards - Flexbox for grid-like layout */
+.section3 {
   display: flex;
-  justify-content: center;
-  gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 15px;
-  font-size: 0.8rem;
+  gap: 2rem;
+  width: 100%;
 }
-#naissance #T’Challa .description .tags span {
-  background-color: #3D2DA6;
-  color: white;
-  font-size: 12px;
-  padding: 4px 10px;
+.section3 .story {
+  flex: 1 1 300px; /* S’agrandit ou se rétrécit, minimum 300px */
+  background: transparent;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative; /* Pour tout élément interne en position absolute */
+}
+.section3 h2 {
+  margin-bottom: 1rem;
+}
+.section3 p {
+  font-size: 0.78em;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+.section3 .div1aside {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+.section3 .div1aside .div2aside {
+  font-size: 0.875em;
+  position: relative;
+  background-color: #FFFFFF;
+  color: #021740;
+  width: 50%;
+  height: auto;
+  box-sizing: content-box;
+  padding: 0% 8.8% 23.5%;
+  margin: 20% 0% 23.5% 20%;
+  border-radius: 10px;
+}
+.section3 .div1aside .div2aside .div3aside {
+  margin-bottom: 5%;
+}
+.section3 .div1aside .div2aside .div3aside img {
+  margin-top: -30%;
+  width: 100%;
+  height: auto;
   border-radius: 4px;
 }
-#naissance #T’Challa .description ul {
-  list-style: none;
-  font-size: 0.82rem;
-  padding: 0;
-  text-align: left;
-}
-#naissance #T’Challa .description ul li {
-  margin-bottom: 8px;
-}
-#naissance .Black-panthere {
-  position: absolute;
-  top: 975px;
-  bottom: 90px;
-  right: 40px;
-  width: 30%;
-}
-
-#contact {
-  background-image: url(../Assets/Accueil/Pantherhome7.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px;
-  position: relative;
-  z-index: 1;
+.section3 .div1aside .div2aside aside h2 {
   font-family: "cantarell", "sans-serif";
-}
-#contact .form-container {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.984) 25%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0) 100%);
-  border-radius: 150px;
-  padding: 50px 40px;
-  color: #000000;
-  width: 1000px;
   text-align: center;
-  margin: 100px auto;
+  color: #000000;
 }
-#contact .form-container h3 {
-  font-size: 11px;
-  margin-bottom: 2px;
-}
-#contact .form-container h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-#contact .form-container form {
+.section3 .div1aside .div2aside aside .buttonaside {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+  gap: 0.625rem; /* 8px */
 }
-#contact .form-container form input {
-  background-color: transparent;
-  padding: 12px 20px;
-  border: 2px solid #11161e;
-  border-radius: 38px;
-  font-size: 14px;
-  outline: none;
-  width: 520px;
-  height: 56px;
+.section3 .div1aside .div2aside aside .buttonaside button {
+  background-color: #3D2DA6;
+  color: #FFFFFF;
+  font-family: "cantarell", "sans-serif";
+  font-size: 0.7rem;
+  padding: 0.35rem;
+  border-radius: 0.25rem;
 }
-#contact .form-container form input::-moz-placeholder {
-  color: #000000;
+.section3 .div1aside .div2aside aside .infoaside dl {
+  display: flex;
+  flex-flow: column;
+  margin: 1.5rem 0 0;
 }
-#contact .form-container form input::placeholder {
-  color: #000000;
-}
-#contact .form-container form textarea {
-  background-color: transparent;
-  padding: 12px 20px;
-  border: 2px solid #11161e;
-  border-radius: 30px;
-  font-size: 14px;
-  outline: none;
-  width: 520px;
-  height: 200px;
-}
-#contact .form-container form textarea::-moz-placeholder {
-  color: #000000;
-}
-#contact .form-container form textarea::placeholder {
-  color: #000000;
-}
-#contact .form-container form button {
-  background-color: #f2cef2;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 38px;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-#contact .form-container form button:hover {
-  box-shadow: 0 0 20px #021740;
+.section3 .div1aside .div2aside aside .infoaside dl dt, .section3 .div1aside .div2aside aside .infoaside dl dd {
+  display: inline;
 }
 
-@media all and (max-width: 1200px) {
-  #hero {
-    background-size: cover;
-    background-position: top center;
-    background-size: 68%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  #hero .hero_wrapper {
-    position: relative;
-  }
-  #hero .hero_wrapper .hero_content {
-    position: static;
-    width: 90%;
-    margin: 150px auto;
-    text-align: center;
-  }
-  #hero .hero_wrapper .hero_content h1 {
-    font-size: 36px;
-  }
-  #hero .hero_wrapper .hero_content p, #hero .hero_wrapper .hero_content a {
-    margin-left: auto;
-    margin-right: auto;
+/* Media Queries for different resolutions */
+@media screen and (max-width: 1210px) {
+  .section2 .character {
+    min-width: 1120px;
   }
 }
-@media (max-width: 1250px) {
-  #personnages {
+@media screen and (max-width: 1295px) {
+  .section2 .character {
+    margin: 0% 0% 3% 3%;
+  }
+}
+/* Scrollbar styling for overflow in section2 */
+@media screen and (max-width: 1210px) {
+  .section2 {
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: #9E91B7 #021740;
+    /* For Chrome, Safari, Edge */
+  }
+  .section2::-webkit-scrollbar {
+    height: 8px;
+    background: #021740;
+  }
+  .section2::-webkit-scrollbar-thumb {
+    background: #9E91B7;
+    border-radius: 4px;
+  }
+}
+/* La section concernant les deux positions colonnes */
+@media (max-width: 1000px) {
+  .section3 {
     flex-direction: column;
-    align-items: center;
-    left: 0;
+    gap: 1rem;
+  }
+  .section3 .story {
     width: 100%;
-    padding: 20px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 20%;
+  }
+  .section3 h2 {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .section3 .div1aside {
+    width: 100%;
+  }
+  .section3 .div1aside .div2aside {
+    width: 90%;
+    padding: 10% 5% 20%;
+    margin: 1rem auto;
+    font-size: 0.8rem;
+  }
+  .section3 .div1aside .div2aside .buttonaside {
+    flex-wrap: wrap;
     justify-content: center;
   }
-  #personnages .personnages {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    width: 100%;
+  .section3 .div1aside .div2aside .buttonaside button {
+    font-size: 0.6rem;
+    padding: 0.3rem 0.5rem;
   }
-  #personnages .carte {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    max-width: 400px;
-    gap: 15px;
+  .section3 .div1aside .div2aside aside .infoaside dl {
+    font-size: 0.75rem;
   }
-  #personnages .carte img {
-    width: 100%;
-    max-width: 300px;
+  .section3 .div1aside .div4aside img {
+    width: 90%;
     height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
-    margin: 0 auto;
   }
-  #personnages .personnages_description {
-    padding: 10px;
-    text-align: center;
-    align-items: center;
-    display: flex;
+}
+@media all and (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+    gap: 1rem;
   }
-  #personnages .shuri img {
-    position: static;
-    width: 100%;
-    max-width: 250px;
+  .character {
+    flex: 1 1 100%; /* Stack vertically on tablet/mobile */
+    padding: 1rem;
+  }
+  .character h3 {
+    font-size: 1.3rem;
+  }
+}
+@media all and (max-width: 850px) {
+  .section1 {
+    padding: 1rem;
+    flex-direction: column; /* empile les éléments verticalement */
+    align-items: center; /* centre horizontalement */
+  }
+  .section1 .theme1 {
+    order: 2; /* texte en premier */
+    margin: 0 auto; /* centre horizontalement */
+    text-align: center; /* centre le texte */
+  }
+  .section1 .theme1 h1 {
+    margin: 2rem auto; /* annule le margin-right négatif */
+    font-size: 1.8rem; /* taille adaptée */
+    margin-bottom: 0.3rem; /* espace en dessous */
+  }
+  .section1 .theme1 h2, .section1 .theme1 p, .section1 .theme1 a {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* centre aussi les autres textes */
+  }
+  .section1 .theme2 {
+    order: 1; /* image en second */
+    margin: 1rem auto; /* centre horizontalement */
+  }
+  .section1 .theme2 img {
+    width: 80%; /* pour qu’elle soit bien proportionnée */
+  }
+  .characters {
+    gap: 1rem;
+  }
+  /* Prevent any remaining overlaps by ensuring relative positioning */
+  .character {
+    position: static; /* Override any absolute if present */
   }
 }
 #Dora-Milaje {
@@ -773,90 +711,4 @@ body {
   border-radius: 6px;
   display: inline-block;
   margin-top: 3px;
-}
-
-footer {
-  color: #FFFFFF;
-  padding: 110px 50px 60px;
-  background-color: red;
-  background-image: url(../Assets/Allpages/back_footer.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-footer .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0 180px;
-  flex-wrap: wrap;
-}
-footer .wrapper .footer-left {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-footer .wrapper .footer-right {
-  position: absolute;
-  display: flex;
-  margin: 150px 0 0 100px;
-}
-footer .wrapper .footer-center {
-  flex: 2;
-  display: flex;
-  flex-direction: inline;
-  align-items: flex-start;
-  gap: 250px;
-  flex-wrap: wrap;
-  margin: 20px 0;
-  padding-left: 80px;
-}
-footer .wrapper .footer-center .pages h2 {
-  font-size: 20px;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
-}
-footer .wrapper .footer-center .pages p {
-  font-size: 14px;
-  margin: 5px 0;
-}
-footer .wrapper .footer-center .social h2 {
-  font-size: 20px;
-  letter-spacing: 3px;
-  margin-bottom: 15px;
-}
-footer .wrapper .footer-center .social .social-icons {
-  display: flex;
-  gap: 22px;
-  justify-content: center;
-}
-footer .wrapper .footer-center .social .social-icons img {
-  width: 42px;
-  height: 40px;
-  cursor: pointer;
-}
-footer .footer-bottom {
-  margin-top: -90px;
-  margin-bottom: 60px;
-  padding-left: 210px;
-  text-align: center;
-  font-size: 12px;
-}
-footer .footer-bottom a {
-  color: #FFFFFF;
-  margin: 0 2px;
-  text-decoration: none;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-footer .footer-bottom a:hover {
-  text-decoration: underline;
-  opacity: 1;
-}
-footer .footer-bottom .dot {
-  font-size: 30px;
-  font-weight: bold;
-  margin: 0 0.1rem;
-  color: #df99f2;
 }/*# sourceMappingURL=styles.css.map */

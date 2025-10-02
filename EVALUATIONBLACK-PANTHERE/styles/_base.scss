@@ -2,76 +2,58 @@
 @import './typo';
 @import './colors';
 
-// Supprime les marges externes par défaut appliquées par le navigateur.
-// Supprime les espacements internes (padding) par défaut.
-// largeur/hauteur inclut le padding et la bordure, ce qui rend la mise en page plus prévisible et facile à gérer.
-
-*{
+/* Global resets for responsiveness */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    max-width: 100%;
-    
 }
 
-.container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    overflow: hidden;
+// empêche le scroll horizontal
+html, body {
+    overflow-x: hidden;
 }
 
-// html, body {
-// //   width: 100%;
-// //   max-width: 100%;
-//   overflow-x: hidden;
-//   margin: 0;
-//   padding: 0;
-// }
-
-
-// Arrière plan utilisé 
-body{
+body {
     background: radial-gradient(  
-        126.67% 350.28% at -17.35% 0%,
-        #0c1b37 10%,
-        #080808 39.1%,
-        rgba(2, 20, 55, 0.838) 94.57%,
-        rgba(2, 23, 64, 0) 100%);
-    width: 100%; // ✅ Largeur écran
+            126.67% 350.28% at -17.35% 0%,
+            #0c1b37 10%,
+            #080808 39.1%,
+            rgba(2, 20, 55, 0.838) 94.57%,
+            rgba(2, 23, 64, 0) 100%);
+    background-attachment: fixed;
+    width: 100%; 
     background-repeat: no-repeat;
-    background-size: cover; // ✅ Couvre toute la surface
+    background-size: cover; 
     font-family: 'cantarell', 'sans-serif';
-    font-size: 14px;
+    font-size: 0.9em;
     color: $white;
     margin: 0;
     padding: 0;
     height: 100%;
-    
 }
-
 
 // Héritage...
 %titre {
     font-family: 'Panthera', 'sans relief';
-    font-size: 50px;
+    font-size: 3.125em;
     color: $gray;
 }
 
 %sous-titre {
     font-family: 'Beyno', 'sans relief';
-    font-size: 22px;
+    font-size: 1.375em;
     color: $gray;
 }
 
 %sous-titre-wakanda {
     font-family: 'Wakanda', 'sans relief';
-    font-size: 30px;
+    font-size: 1.875em;
     color: $gray;
 }
 
 %texte {
     font-family: 'cantarell', 'sans-serif';
-    font-size: 16px;
+    font-size: 0.875em; // 14px
     color: $white;
 }
