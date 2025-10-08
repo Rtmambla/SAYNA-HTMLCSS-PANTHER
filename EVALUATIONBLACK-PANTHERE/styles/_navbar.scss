@@ -9,63 +9,149 @@
     
     &_brand {
       display: flex;
+      align-items: center;
+      margin-top: 0.6rem;
     }
 
     &_menu {
-    display: flex;
+      display: flex;
     }
 
     &_link {
       text-decoration: none;
       color: $white;
       margin: 0 2rem;
-      padding-left: 0.75rem;
+      // padding-left: 0.75rem;
       font-family: 'beyno', 'sans relief';
       font-size: 0,9em;
+      transition: color 0.1s ease;
     }
 
     &_link:hover{
-      text-decoration: underline;
+      text-decoration: underline 2px;
       color: $gray;
     }
     
-    &_link.active{
-      border-bottom: 2px solid $gray;
-      color: $gray;
+    // &_link.active{
+    //   border-bottom: 2px solid $gray;
+    //   color: $gray;
+    // }
+
+     /* --- MENU BURGER --- */
+    &_toggle {
+      display: none;
+    }
+
+    &_icon {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 1.56rem;
+      height: 1.125rem;
+      cursor: pointer;
+      z-index: 1001;
+
+      span {
+        display: block;
+        height: 3px;
+        background: $white;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
     }
 }
+
 
 // DESIGN DU MENU RESPONSIVE
 // ✅ Utilisation de media queries pour adapter le design du menu aux écrans plus petits
 
-@media all and (max-width: 780px) {
+@media all and (max-width: 555px) {
   .navbar {
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
 
-    &_brand {
-      width: 100%;
+    position: relative;
+    flex-direction: row;
+
+
+    &_icon {
       display: flex;
-      justify-content: center;
-      margin-bottom: 10px;
-      img {
-        max-width: 120px;
-        height: auto;
-      }
-    }
-    
-    &_menu {
-      flex-direction: column;
-      width: 100%;
-    }
-    
-    &_link {
-      margin: 10px 0;
+      cursor: pointer;
     }
 
-    &_link.active{
-      border-bottom: none;
+    &_menu {
+      
+      display: none;
+      position: absolute;
+      top: 3.75rem;        /* 60px → 60 / 16 = 3.75rem */
+      right: 0;
+      background: transparent;
+      flex-direction: column;
+      width: 80%;            /* 180px → environ 80% d’un écran mobile, plus flexible */
+      max-width: 11.25rem;   /* 180px → 11.25rem pour limiter la largeur */
+      padding: 1rem;
+      text-align: center;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1rem $blue_dark;
+      transform: translateX(100%); /* Caché à droite */
+      transition: transform 0.4s ease-in-out;
+      z-index: 15;
+    }
+
+    &_link {
+      margin: 0.625rem 0;
+      display: block;
+      color: $gray;
+    }
+
+    /* ✅ Checkbox cochée → le menu slide depuis la droite */
+      #nav-toggle:checked ~ .navbar_menu {
+      transform: translateX(0);
+    }
+
+    /* ✅ Quand la checkbox est cochée → on affiche le menu */
+    &_toggle:checked ~ .navbar_menu {
+      display: flex;
+      animation: menuFade 0.3s ease forwards;
+    }
+
+    /* ✅ Animation du burger en croix */
+    &_toggle:checked + .navbar_icon span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    &_toggle:checked + .navbar_icon span:nth-child(2) {
+      opacity: 0;
+    }
+    &_toggle:checked + .navbar_icon span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
   }
+  //   text-align: center;
+  //   flex-direction: column;
+  //   align-items: center;
+
+  //   &_brand {
+  //     width: 100%;
+  //     display: flex;
+  //     justify-content: center;
+  //     margin-bottom: 10px;
+  //     img {
+  //       max-width: 120px;
+  //       height: auto;
+  //     }
+  //   }
+    
+  //   &_menu {
+  //     flex-direction: column;
+  //     width: 100%;
+  //   }
+    
+  //   &_link {
+  //     margin: 10px 0;
+  //   }
+
+  //   &_link.active{
+  //     border-bottom: none;
+  //   }
+  // }
+
+  
 }
