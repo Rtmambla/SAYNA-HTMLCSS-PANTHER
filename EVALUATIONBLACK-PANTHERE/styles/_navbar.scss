@@ -70,48 +70,69 @@
 
     position: relative;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
-
+    /* burger icon (label) — doit être IMMEDIATEMENT après l'input dans le HTML */
     &_icon {
       display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 1.6rem;
+      height: 1.2rem;
       cursor: pointer;
+      z-index: 20;
+
+      span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        transition: transform 0.32s ease, opacity 0.32s ease;
+      }
     }
 
     &_menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
       
-      display: none;
       position: absolute;
       top: 3.75rem;        /* 60px → 60 / 16 = 3.75rem */
       right: 0;
       background: transparent;
       flex-direction: column;
       width: 80%;            /* 180px → environ 80% d’un écran mobile, plus flexible */
-      max-width: 11.25rem;   /* 180px → 11.25rem pour limiter la largeur */
+      max-width: 7.25rem;   /* 180px → 11.25rem pour limiter la largeur */
       padding: 1rem;
-      text-align: center;
+      text-align: left;
       border-radius: 0.5rem;
       box-shadow: 0 0.5rem 1rem $blue_dark;
-      transform: translateX(100%); /* Caché à droite */
-      transition: transform 0.4s ease-in-out;
       z-index: 15;
+      /* 🔹 Menu caché à droite */
+      transform: translateX(100%); /* Caché à droite */
+      opacity: 0;
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      
     }
 
     &_link {
       margin: 0.625rem 0;
-      display: block;
+      // display: block;
       color: $gray;
     }
 
     /* ✅ Checkbox cochée → le menu slide depuis la droite */
       #nav-toggle:checked ~ .navbar_menu {
       transform: translateX(0);
+      opacity: 1;
     }
 
     /* ✅ Quand la checkbox est cochée → on affiche le menu */
     &_toggle:checked ~ .navbar_menu {
       display: flex;
       animation: menuFade 0.3s ease forwards;
-    }
+    } 
+
 
     /* ✅ Animation du burger en croix */
     &_toggle:checked + .navbar_icon span:nth-child(1) {
@@ -124,34 +145,4 @@
       transform: rotate(-45deg) translate(5px, -5px);
     }
   }
-  //   text-align: center;
-  //   flex-direction: column;
-  //   align-items: center;
-
-  //   &_brand {
-  //     width: 100%;
-  //     display: flex;
-  //     justify-content: center;
-  //     margin-bottom: 10px;
-  //     img {
-  //       max-width: 120px;
-  //       height: auto;
-  //     }
-  //   }
-    
-  //   &_menu {
-  //     flex-direction: column;
-  //     width: 100%;
-  //   }
-    
-  //   &_link {
-  //     margin: 10px 0;
-  //   }
-
-  //   &_link.active{
-  //     border-bottom: none;
-  //   }
-  // }
-
-  
 }

@@ -120,38 +120,56 @@ body {
   .navbar {
     position: relative;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* burger icon (label) — doit être IMMEDIATEMENT après l'input dans le HTML */
     /* ✅ Checkbox cochée → le menu slide depuis la droite */
     /* ✅ Quand la checkbox est cochée → on affiche le menu */
     /* ✅ Animation du burger en croix */
   }
   .navbar_icon {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.6rem;
+    height: 1.2rem;
     cursor: pointer;
+    z-index: 20;
+  }
+  .navbar_icon span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    transition: transform 0.32s ease, opacity 0.32s ease;
   }
   .navbar_menu {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     position: absolute;
     top: 3.75rem; /* 60px → 60 / 16 = 3.75rem */
     right: 0;
     background: transparent;
     flex-direction: column;
     width: 80%; /* 180px → environ 80% d’un écran mobile, plus flexible */
-    max-width: 11.25rem; /* 180px → 11.25rem pour limiter la largeur */
+    max-width: 7.25rem; /* 180px → 11.25rem pour limiter la largeur */
     padding: 1rem;
-    text-align: center;
+    text-align: left;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem #021740;
-    transform: translateX(100%); /* Caché à droite */
-    transition: transform 0.4s ease-in-out;
     z-index: 15;
+    /* 🔹 Menu caché à droite */
+    transform: translateX(100%); /* Caché à droite */
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
   }
   .navbar_link {
     margin: 0.625rem 0;
-    display: block;
     color: #9e91b7;
   }
   .navbar #nav-toggle:checked ~ .navbar_menu {
     transform: translateX(0);
+    opacity: 1;
   }
   .navbar_toggle:checked ~ .navbar_menu {
     display: flex;
@@ -180,14 +198,11 @@ body {
 /* Theme section */
 .section1 {
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  background-color: transparent;
-  position: relative;
+  flex-flow: row;
 }
 .section1 .theme1 {
   flex: 1 1 50%;
-  margin-top: -4rem;
+  margin-top: 8rem;
   margin-left: 3rem;
   position: relative;
   z-index: 1;
@@ -342,6 +357,61 @@ body {
   display: inline;
 }
 
+@media all and (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+}
+@media all and (max-width: 840px) {
+  .section1 {
+    position: relative; /* permet le positionnement absolu interne */
+    display: flex;
+    margin-left: 1.78rem;
+    flex-direction: column; /* empile les éléments verticalement */
+    align-items: center; /* centre horizontalement */
+    justify-content: center;
+    overflow: hidden; /* empêche les débordements */
+  }
+  .section1 .theme2 {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .section1 .theme2 img {
+    width: 100%;
+    height: 100%;
+    max-height: 100vh; /* l’image ne dépassera pas la hauteur de l’écran */
+    -o-object-fit: cover;
+       object-fit: cover; /* occupe tout l’espace sans déformation */
+    position: relative;
+    z-index: 1;
+    opacity: 0.5; /* ↓ optionnel : rend l’image plus sombre pour lisibilité du texte */
+  }
+  .section1 .theme1 {
+    order: 2;
+    position: absolute; /* superposé sur l’image */
+    top: 20%;
+    left: 35%;
+    transform: translate(-50%, -50%); /* centre parfaitement */
+    z-index: 2; /* au-dessus de l’image */
+    width: 80%; /* limite la largeur (adaptable) */
+    max-width: 1200px;
+    height: auto;
+    text-align: left;
+    color: #FFFFFF;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  .section1 .theme1 h1 {
+    font-size: 2.3em;
+  }
+  .section1 .theme1 h2 {
+    margin-bottom: 0.1rem;
+  }
+}
 /* Media Queries for different resolutions */
 @media screen and (max-width: 1210px) {
   .section2 .character {
@@ -410,55 +480,6 @@ body {
   .section3 .div1aside .div4aside img {
     width: 90%;
     height: auto;
-  }
-}
-@media all and (max-width: 768px) {
-  .container {
-    padding: 0.5rem;
-    gap: 1rem;
-  }
-  .character {
-    flex: 1 1 100%; /* Stack vertically on tablet/mobile */
-    padding: 1rem;
-  }
-  .character h3 {
-    font-size: 1.3rem;
-  }
-}
-@media all and (max-width: 850px) {
-  .section1 {
-    padding: 1rem;
-    flex-direction: column; /* empile les éléments verticalement */
-    align-items: center; /* centre horizontalement */
-  }
-  .section1 .theme1 {
-    order: 2; /* texte en premier */
-    margin: 0 auto; /* centre horizontalement */
-    text-align: center; /* centre le texte */
-  }
-  .section1 .theme1 h1 {
-    margin: 2rem auto; /* annule le margin-right négatif */
-    font-size: 1.8rem; /* taille adaptée */
-    margin-bottom: 0.3rem; /* espace en dessous */
-  }
-  .section1 .theme1 h2, .section1 .theme1 p, .section1 .theme1 a {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center; /* centre aussi les autres textes */
-  }
-  .section1 .theme2 {
-    order: 1; /* image en second */
-    margin: 1rem auto; /* centre horizontalement */
-  }
-  .section1 .theme2 img {
-    width: 80%; /* pour qu’elle soit bien proportionnée */
-  }
-  .characters {
-    gap: 1rem;
-  }
-  /* Prevent any remaining overlaps by ensuring relative positioning */
-  .character {
-    position: static; /* Override any absolute if present */
   }
 }
 #Dora-Milaje {
