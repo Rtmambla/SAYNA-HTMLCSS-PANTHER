@@ -223,79 +223,47 @@
     }
 }
 
-@media all and (max-width: 840px) {
+@media all and (max-width: 1150px) {
 
-    .section1 {
-        position: relative; /* permet le positionnement absolu interne */
-        display: flex;
-        margin-left: 1.78rem;
-        flex-direction: column; /* empile les éléments verticalement */
-        align-items: center;    /* centre horizontalement */
-        justify-content: center;
-        overflow: hidden; /* empêche les débordements */
-        
-        .theme2 {
-            order: 1;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+  .section1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; // ou center si tu veux centrer le texte
+    padding: 2rem;
+    min-height: 80vh; // pour que l’image de fond soit bien visible
+    overflow: hidden;
 
-            img {
-                width: 100%;
-                height: 100%;
-                max-height: 100vh; /* l’image ne dépassera pas la hauteur de l’écran */
-                object-fit: cover; /* occupe tout l’espace sans déformation */
-                position: relative;
-                z-index: 1;
-                opacity: 0.5; /* ↓ optionnel : rend l’image plus sombre pour lisibilité du texte */
-            }
-        }
+    /* L’image de .theme2 devient le background */
+    background-image: url("Assets/Accueil/Pantherhome1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-        .theme1 {
-            
-            order: 2;
-            position: absolute; /* superposé sur l’image */
-            top: 20%;
-            left: 35%;
-            transform: translate(-50%, -50%); /* centre parfaitement */
-            z-index: 2; /* au-dessus de l’image */
-            width: 80%; /* limite la largeur (adaptable) */
-            max-width: 1200px;
-            height: auto;
-            text-align: left;
-            color: $white;
-            padding: 2rem;
-            box-sizing: border-box;
-
-            h1 {
-                @extend %titre;
-                font-size: 2.3em;
-            }
-
-            h2 {
-                @extend %sous-titre;
-                margin-bottom: 0.1rem;
-            }
-
-            p {
-                @extend %texte;
-                // margin: 0.1rem 16rem 0.2rem 0;
-            }
-        }
+    .theme2 {
+      width: 100%;
     }
+
+    .theme1 {
+      position: relative;
+      z-index: 2;
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto; // centré
+      color: $white; // au cas où l’image est sombre/clair
+
+      /* Empêcher les débordements */
+      h1 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        margin-right: 0; // important pour ne pas décaler en responsive
+      }
+      p {
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+      }
+    }
+  }
 }
-
-// @media all and (max-width: 490px) {
-//      .section1 {
-//         top: 3%;
-
-//         .theme1 {
-            
-//             margin-bottom: 10rem;
-//         }
-//     }
-// }
 
 /* Media Queries for different resolutions */
 @media screen and (max-width: 1210px) {
