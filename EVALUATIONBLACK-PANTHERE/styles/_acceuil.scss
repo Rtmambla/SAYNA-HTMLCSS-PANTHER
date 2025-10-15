@@ -9,6 +9,7 @@
     gap: 2rem;
 }
 
+
 /* Theme section */
 .section1 {
     display: flex;
@@ -209,6 +210,15 @@
                         dt, dd {
                             display: inline;
                         }
+
+                        dd{
+                            font-weight: bold;
+
+                            span{
+                                font-weight: normal;
+                                font-size: 0.62rem;
+                            }
+                        }
                     }
                 }
             }
@@ -226,6 +236,208 @@
     }
 }
 
+/* SECTION 4 - Fond général */
+.section4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
+    background-size: cover;
+
+    .confirmation {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        max-height: 100vh;
+    }
+    
+    // /* Effet étoiles optionnel */
+    // :before {
+    //     content: "";
+    //     position: absolute;
+    //     inset: 0;
+    //     background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
+    //     background-size: auto; /* ou 100% 100% selon l'effet souhaité */;
+    //     opacity: 0.3;
+    //     z-index: 0;
+    // }
+
+    /* Bloc principal translucide */
+    .fondsec4 {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(1rem);
+        border-radius: 20rem;
+        padding: 4rem 6rem;
+        max-width: 80%;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 0 3rem rgba(0,0,0,0.3);
+
+        /* Titres */
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+    }
+
+
+    /* Champs du formulaire */
+    .fondsec4 input,
+    .fondsec4 textarea {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        margin-bottom: 1.5rem;
+        border: 0.2rem solid rgba(255,255,255,0.5);
+        border-radius: 5rem;
+        background: rgba(255,255,255,0.2);
+        color: #fff;
+        outline: none;
+        font-size: 1rem;
+    }
+
+    .fondsec4 textarea {
+        border-radius: 3rem;
+        resize: none;
+        min-height: 12rem;
+    }
+
+    /* Bouton */
+    #button {
+        background: linear-gradient(to right, #eeb4ff, #d8a6ff);
+        border: none;
+        color: #000;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 1.2rem;
+        padding: 1rem 3rem;
+        border-radius: 5rem;
+    }
+
+    #button:hover {
+        background: linear-gradient(to right, #fcd7ff, #e0c3ff);
+    }
+}
+
+
+
+
+
+// .section4 {
+//     margin: 2% 0px 5% 0px;
+
+//     .confirmation {
+//         display: none;
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background-color: rgba(0, 0, 0, 0.8);
+//         z-index: 1000;
+//         align-items: center;
+//         justify-content: center;
+//         max-height: 100vh;
+
+//         .confirmation-content {
+//             background: linear-gradient(180deg, #F2CEF2 0%, #FFFFFF 100%);
+//             padding: 40px;
+//             border-radius: 20px;
+//             text-align: center;
+//             max-width: 500px;
+//             width: 80%;
+//             color: #021740;
+//             border: 2px solid #021740;
+//             animation: fadeIn 0.5s ease-out;
+
+//             h3 {
+//                 display: block;
+//                 font-size: 1.17em;
+//                 margin-block-start: 1em;
+//                 margin-block-end: 1em;
+//                 margin-inline-start: 0px;
+//                 margin-inline-end: 0px;
+//                 font-weight: bold;
+//                 unicode-bidi: isolate;
+//             }
+
+//             p {
+//                 display: block;
+//                 margin-block-start: 1em;
+//                 margin-block-end: 1em;
+//                 margin-inline-start: 0px;
+//                 margin-inline-end: 0px;
+//                 unicode-bidi: isolate;
+//             }
+
+//             .close-btn {
+//                 display: inline-block;
+//                 margin-top: 20px;
+//                 padding: 10px 25px;
+//                 background-color: #021740;
+//                 color: $white;
+//                 border-radius: 30px;
+//                 text-decoration: none;
+//                 transition: all 0.3s;
+//             }
+//         }
+//     }
+
+//     .fondsec4 {
+//         background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
+//         background-size: cover;
+//         height: 900px;
+//         max-height: 1000px;
+//         display: flex;
+//         flex-flow: column;
+//         align-items: center;
+
+//         .formulaire {
+//             display: flex;
+//             flex-flow: column;
+//             align-items: center;
+//             gap: 20px;
+//             background: rgb(255, 255, 255);
+//             background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+//             color: #021740;
+//             border-radius: 200px;
+//             width: max-content;
+//             margin: auto;
+//             padding: 5.186% 16.3% 0.741% 16.3%;
+
+//             h2 {
+//                 display: block;
+//                 font-size: 2.5em;
+//                 margin-block-start: 0.83em;
+//                 margin-block-end: 0.83em;
+//                 margin-inline-start: 0px;
+//                 margin-inline-end: 0px;
+//                 font-weight: bold;
+//                 unicode-bidi: isolate;
+//             }
+//         }
+//     }
+// }
+
+/* Media Queries pour le responsive */
 @media all and (max-width: 768px) {
     .container {
         padding: 0.5rem;
@@ -233,6 +445,7 @@
     }
 }
 
+/* Media Queries pour le responsive de la section1*/
 @media all and (max-width: 1150px) {
 
   .section1 {
@@ -275,7 +488,7 @@
   }
 }
 
-/* Media Queries for different resolutions */
+/* Media Queries pour la section2 */
 @media screen and (max-width: 1210px) {
     .section2 .character {
         min-width: 1120px;
@@ -311,55 +524,57 @@
 /* La section concernant les deux positions colonnes */
 
 @media (max-width: 1160px) {
-  .section3 {
+    
+.section3 {
     flex-direction: column;
     gap: 1rem;
 
     .story {
-      width: 100%;
-      padding: 1rem;
-      font-size: 0.9rem;
-      margin-bottom: 20%;
+        width: 100%;
+        padding: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 20%;
     }
 
     h2 {
-      text-align: center;
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
 
     .div1aside {
-      width: 75%;
-      margin: 0 auto;
+        width: 75%;
+        margin: 0 auto;
 
-      .div2aside {
-        width: 90%;
-        padding: 10% 5% 20%;
-        margin: 1rem auto;
-        font-size: 0.8rem;
+        .div2aside {
+            width: 90%;
+            padding: 10% 5% 20%;
+            margin: 1rem auto;
+            font-size: 0.8rem;
 
-        .buttonaside {
-          flex-wrap: wrap;
-          justify-content: center;
+            aside {
+                .buttonaside {
+                    flex-wrap: wrap;
+                    justify-content: center;
 
-          button {
-            font-size: 0.6rem;
-            padding: 0.3rem 0.5rem;
-          }
+                    button {
+                        font-size: 0.6rem;
+                        padding: 0.3rem 0.5rem;
+                    }
+                }
+
+                .infoaside dl {
+                    font-size: 0.75rem;
+                }
+            }   
         }
 
-        aside .infoaside dl {
-          font-size: 0.75rem;
+            .div4aside img {
+                width: 90%;
+                height: auto;
+                margin: 2rem 0 2rem auto; /* Centré horizontalement */
+
+            }
         }
-      }
-
-      .div4aside img {
-        width: 90%;
-        height: auto;
-        margin: 2rem 0 2rem auto; /* Centré horizontalement */
-
-      }
     }
-  }
 }
 
 

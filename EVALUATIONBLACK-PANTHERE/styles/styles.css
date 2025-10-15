@@ -361,6 +361,13 @@ body {
 .section3 .div1aside .div2aside aside .infoaside dl dt, .section3 .div1aside .div2aside aside .infoaside dl dd {
   display: inline;
 }
+.section3 .div1aside .div2aside aside .infoaside dl dd {
+  font-weight: bold;
+}
+.section3 .div1aside .div2aside aside .infoaside dl dd span {
+  font-weight: normal;
+  font-size: 0.62rem;
+}
 .section3 .div1aside .div4aside img {
   width: 80%; /* Par exemple : réduit à 80% de sa taille actuelle */
   height: auto;
@@ -368,12 +375,96 @@ body {
   margin: -5rem 0 2rem auto; /* Centré horizontalement */
 }
 
+/* SECTION 4 - Fond général */
+.section4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
+  background-size: cover;
+  /* Bloc principal translucide */
+  /* Champs du formulaire */
+  /* Bouton */
+}
+.section4 .confirmation {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  max-height: 100vh;
+}
+.section4 .fondsec4 {
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(1rem);
+          backdrop-filter: blur(1rem);
+  border-radius: 20rem;
+  padding: 4rem 6rem;
+  max-width: 80%;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3);
+  /* Titres */
+}
+.section4 .fondsec4 p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+.section4 .fondsec4 h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+.section4 .fondsec4 input,
+.section4 .fondsec4 textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 0.2rem solid rgba(255, 255, 255, 0.5);
+  border-radius: 5rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+  font-size: 1rem;
+}
+.section4 .fondsec4 textarea {
+  border-radius: 3rem;
+  resize: none;
+  min-height: 12rem;
+}
+.section4 #button {
+  background: linear-gradient(to right, #eeb4ff, #d8a6ff);
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+}
+.section4 #button:hover {
+  background: linear-gradient(to right, #fcd7ff, #e0c3ff);
+}
+
+/* Media Queries pour le responsive */
 @media all and (max-width: 768px) {
   .container {
     padding: 0.5rem;
     gap: 1rem;
   }
 }
+/* Media Queries pour le responsive de la section1*/
 @media all and (max-width: 1150px) {
   .section1 {
     position: relative;
@@ -410,7 +501,7 @@ body {
     font-size: clamp(0.8rem, 2.5vw, 1rem);
   }
 }
-/* Media Queries for different resolutions */
+/* Media Queries pour la section2 */
 @media screen and (max-width: 1210px) {
   .section2 .character {
     min-width: 1120px;
@@ -452,7 +543,6 @@ body {
     margin-bottom: 20%;
   }
   .section3 h2 {
-    text-align: center;
     font-size: 1.2rem;
   }
   .section3 .div1aside {
@@ -465,11 +555,11 @@ body {
     margin: 1rem auto;
     font-size: 0.8rem;
   }
-  .section3 .div1aside .div2aside .buttonaside {
+  .section3 .div1aside .div2aside aside .buttonaside {
     flex-wrap: wrap;
     justify-content: center;
   }
-  .section3 .div1aside .div2aside .buttonaside button {
+  .section3 .div1aside .div2aside aside .buttonaside button {
     font-size: 0.6rem;
     padding: 0.3rem 0.5rem;
   }
