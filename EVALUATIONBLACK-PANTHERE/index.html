@@ -212,14 +212,6 @@
         
         <!-- La sedtion du formulaire -->
         <section class="section4">
-            <!-- Message de confirmation -->
-            <!-- <div id="confirmation" class="confirmation">
-                <div class="confirmation-content">
-                    <h3>Votre message a atteint le Conseil du Wakanda.</h3>
-                    <p>Nous l’examinerons avec l’attention due à toute demande extérieure. Yibambe ! (Tenons bon !)</p>
-                    <a href="#" class="close-btn">Fermer</a>
-                </div>
-            </div> -->
             <div class="fondsec4">
                 <div class="formulaire">
                     <p>Besoin de l’intervention du Wakanda ?</p>
@@ -237,7 +229,17 @@
                             <input type="submit" value="Envoyer" id="button">
                         </form>
                 </div>
+
+                <!-- Message de confirmation -->
+                <div id="confirmation" class="confirmation">
+                    <div class="confirmation-content">
+                        <h3>Votre message a atteint le Conseil du Wakanda.</h3>
+                        <p>Nous l’examinerons avec l’attention due à toute demande extérieure. Yibambe ! (Tenons bon !)</p>
+                        <a href="#" class="close-btn">Fermer</a>
+                    </div>
+                </div>
             </div>
+
         </section>
 
     <footer>
@@ -277,5 +279,32 @@
       </div>  
     </footer>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("wakanda-form");
+      const confirmation = document.getElementById("confirmation");
+      const closeBtn = document.querySelector(".close-btn");
+
+      // Empêcher la soumission normale et afficher la confirmation
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (form.checkValidity()) {
+          confirmation.classList.add("visible");
+          form.reset();
+        } else {
+          form.reportValidity(); // Affiche les erreurs natives si formulaire incomplet
+        }
+      });
+
+      // Fermer la fenêtre de confirmation
+      closeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        confirmation.classList.remove("visible");
+      });
+    });
+  </script>
+
 </body>
 </html>

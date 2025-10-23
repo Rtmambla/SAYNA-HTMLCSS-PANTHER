@@ -248,6 +248,7 @@
     overflow: hidden;
     background: url(../Assets/Accueil/Pantherhome7.png) center/cover no-repeat;
 
+   
     // Confirmation modal (inchangée)
     // .confirmation {
     //     display: none;
@@ -257,10 +258,11 @@
     //     width: 100vw;
     //     height: 100vh;
     //     background-color: rgba(0, 0, 0, 0.8);
-    //     z-index: 1000;
+    //     z-index: 9999;
     //     display: flex;
     //     align-items: center;
     //     justify-content: center;
+        
 
     //     .confirmation-content {
     //         background: rgba(255, 255, 255, 0.95);
@@ -291,7 +293,7 @@
             rgba(255, 255, 255, 0.2) 70%,   // Plus transparent
             rgba(255, 255, 255, 0) 100%     // Totalement transparent en bas
         );
-        border-radius: 15rem;
+        border-radius: 10rem;
         padding: 3rem 2rem; // Réduit pour mobile
         width: 90%;
         max-width: 850px; // Largeur max sur desktop
@@ -312,15 +314,6 @@
             margin-bottom: 2rem;
             color: $black;
         }
-
-        // Champs formulaire
-        // label {
-        //     display: block;
-        //     text-align: left;
-        //     margin-bottom: 0.5rem;
-        //     font-size: clamp(0.9rem, 2.5vw, 1rem);
-        //     color: $black;
-        // }
         
         input,
         textarea {
@@ -349,7 +342,7 @@
 
         // Bouton
         #button {
-            background: linear-gradient(to right, #eeb4ff, #d8a6ff);
+            background: $light_pink;
             border: none;
             color: $black;
             font-weight: bold;
@@ -358,8 +351,9 @@
             font-size: clamp(1rem, 3vw, 1.2rem);
             padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 5vw, 3rem);
             border-radius: 3rem;
-            width: 100%;
+            width: 50%;
             max-width: 250px;
+            box-sizing: border-box;
 
             &:hover {
                 background: linear-gradient(to right, #fcd7ff, #e0c3ff);
@@ -367,111 +361,80 @@
                 box-shadow: 0 5px 15px rgba(238, 180, 255, 0.4);
             }
         }
+
+        // .confirmation {
+        // position: fixed;
+        // inset: 0;
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        // background: rgba(0, 0, 0, 0.7);
+        // backdrop-filter: blur(10px);
+        // opacity: 0;
+        // visibility: hidden;
+        // transition: opacity 0.4s ease, visibility 0.4s ease;
+        // z-index: 1000;
+
+        // &.visible {
+        //     opacity: 1;
+        //     visibility: visible;
+        // }
+
+        // .confirmation-content {
+        //     background: linear-gradient(
+        //     to bottom,
+        //     rgba(255, 255, 255, 0.95),
+        //     rgba(255, 255, 255, 0.75)
+        //     );
+        //     border-radius: 2rem;
+        //     padding: 3rem 2rem;
+        //     max-width: 500px;
+        //     text-align: center;
+        //     color: #000;
+        //     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.3);
+        //     animation: fadeIn 0.4s ease;
+
+        //     h3 {
+        //     margin-bottom: 1rem;
+        //     font-size: 1.6rem;
+        //     font-weight: 700;
+        //     }
+
+        //     p {
+        //     font-size: 1rem;
+        //     margin-bottom: 2rem;
+        //     }
+
+        //     .close-btn {
+        //     display: inline-block;
+        //     padding: 0.8rem 2rem;
+        //     border-radius: 2rem;
+        //     background: linear-gradient(to right, #f4b9ff, #e1b1ff);
+        //     color: #000;
+        //     font-weight: bold;
+        //     text-decoration: none;
+        //     transition: all 0.3s ease;
+
+        //     &:hover {
+        //         background: linear-gradient(to right, #fcd7ff, #e0c3ff);
+        //         transform: translateY(-2px);
+        //     }
+        //     }
+        // }
+        // }
+
+        // @keyframes fadeIn {
+        // from {
+        //     transform: scale(0.95);
+        //     opacity: 0;
+        // }
+        // to {
+        //     transform: scale(1);
+        //     opacity: 1;
+        // }
+        // }
     }
 }
-
-
-// /* SECTION 4 - Fond général */
-// .section4 {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     padding: 6rem 0;
-//     position: relative;
-//     overflow: hidden;
-//     width: 100%;
-//     background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
-//     background-size: cover;
-    
-
-//     .confirmation {
-//         display: none;
-//         position: fixed;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         background-color: rgba(0, 0, 0, 0.8);
-//         z-index: 1000;
-//         align-items: center;
-//         justify-content: center;
-//         max-height: 100vh;
-//     }
-    
-//     // /* Effet étoiles optionnel */
-//     // :before {
-//     //     content: "";
-//     //     position: absolute;
-//     //     inset: 0;
-//     //     background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
-//     //     background-size: auto; /* ou 100% 100% selon l'effet souhaité */;
-//     //     opacity: 0.3;
-//     //     z-index: 0;
-//     // }
-
-//     /* Bloc principal translucide */
-//     .fondsec4 {
-//         background: rgba(255, 255, 255, 0.2);
-//         backdrop-filter: blur(1rem);
-//         border-radius: 20rem;
-//         padding: 4rem 6rem;
-//         max-width: 80%;
-//         width: 90%;
-//         text-align: center;
-//         box-shadow: 0 0 3rem rgba(0,0,0,0.3);
-
-//         /* Titres */
-//         p {
-//             font-size: 1.2rem;
-//             margin-bottom: 1rem;
-//             color: #fff;
-//         }
-
-//         h2 {
-//             font-size: 2.4rem;
-//             margin-bottom: 2rem;
-//             color: #fff;
-//         }
-//     }
-
-
-//     /* Champs du formulaire */
-//     .fondsec4 input,
-//     .fondsec4 textarea {
-//         width: 100%;
-//         padding: 1rem 1.5rem;
-//         margin-bottom: 1.5rem;
-//         border: 0.2rem solid rgba(255,255,255,0.5);
-//         border-radius: 5rem;
-//         background: rgba(255,255,255,0.2);
-//         color: #fff;
-//         outline: none;
-//         font-size: 1rem;
-//     }
-
-//     .fondsec4 textarea {
-//         border-radius: 3rem;
-//         resize: none;
-//         min-height: 12rem;
-//     }
-
-//     /* Bouton */
-//     #button {
-//         background: linear-gradient(to right, #eeb4ff, #d8a6ff);
-//         border: none;
-//         color: #000;
-//         font-weight: bold;
-//         cursor: pointer;
-//         transition: 0.3s;
-//         font-size: 1.2rem;
-//         padding: 1rem 3rem;
-//         border-radius: 5rem;
-//     }
-
-//     #button:hover {
-//         background: linear-gradient(to right, #fcd7ff, #e0c3ff);
-//     }
-// }
 
 
 /* Media Queries pour le responsive */
