@@ -61,7 +61,7 @@ body {
 
 #origine .wrapper .origine .lien p a,
 #origine .wrapper .story .lien p a, #origine .wrapper .origine p,
-#origine .wrapper .story p, #panther .description p, #enigme .culture-generale p, #enigme .alphabet-wakandais p, #Dora-Milaje .defi p, .section3 p, .section2 .character p, .section1 .theme1 p {
+#origine .wrapper .story p, #panther .description p, #enigme .culture-generale p, #enigme .alphabet-wakandais p, #Dora-Milaje .defi p, .section4 .fondsec4 p, .section3 p, .section2 .character p, .section1 .theme1 p {
   font-family: "cantarell", "sans-serif";
   font-size: 0.875em;
   color: #FFFFFF;
@@ -375,86 +375,79 @@ body {
   margin: -5rem 0 2rem auto; /* Centré horizontalement */
 }
 
-/* SECTION 4 - Fond général */
 .section4 {
+  width: 100vw;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 6rem 0;
   position: relative;
   overflow: hidden;
-  width: 100%;
-  background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
-  background-size: cover;
-  /* Bloc principal translucide */
-  /* Champs du formulaire */
-  /* Bouton */
-}
-.section4 .confirmation {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  max-height: 100vh;
+  background: url(../Assets/Accueil/Pantherhome7.png) center/cover no-repeat;
 }
 .section4 .fondsec4 {
-  background: rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
-  border-radius: 20rem;
-  padding: 4rem 6rem;
-  max-width: 80%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+  border-radius: 15rem;
+  padding: 3rem 2rem;
   width: 90%;
+  max-width: 850px;
   text-align: center;
-  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.3);
-  /* Titres */
+  margin: 0 1rem;
 }
 .section4 .fondsec4 p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 0, 68rem;
+  color: #000000;
 }
 .section4 .fondsec4 h2 {
-  font-size: 2.4rem;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
   margin-bottom: 2rem;
-  color: #fff;
+  color: #000000;
 }
 .section4 .fondsec4 input,
 .section4 .fondsec4 textarea {
-  width: 100%;
-  padding: 1rem 1.5rem;
+  width: 68%;
+  padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1rem, 3vw, 1.5rem);
   margin-bottom: 1.5rem;
-  border: 0.2rem solid rgba(255, 255, 255, 0.5);
-  border-radius: 5rem;
+  border: 0.08rem solid #000000;
+  border-radius: 3rem;
   background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: #000000;
   outline: none;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  box-sizing: border-box;
+  color: #000000;
+}
+.section4 .fondsec4 input::-moz-placeholder, .section4 .fondsec4 textarea::-moz-placeholder {
+  color: #000000;
+}
+.section4 .fondsec4 input::placeholder,
+.section4 .fondsec4 textarea::placeholder {
+  color: #000000;
 }
 .section4 .fondsec4 textarea {
-  border-radius: 3rem;
-  resize: none;
-  min-height: 12rem;
+  border-radius: 2rem;
+  resize: vertical;
+  min-height: clamp(100px, 20vh, 150px);
 }
-.section4 #button {
+.section4 .fondsec4 #button {
   background: linear-gradient(to right, #eeb4ff, #d8a6ff);
   border: none;
-  color: #000;
+  color: #000000;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
-  font-size: 1.2rem;
-  padding: 1rem 3rem;
-  border-radius: 5rem;
+  transition: all 0.3s ease;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 5vw, 3rem);
+  border-radius: 3rem;
+  width: 100%;
+  max-width: 250px;
 }
-.section4 #button:hover {
+.section4 .fondsec4 #button:hover {
   background: linear-gradient(to right, #fcd7ff, #e0c3ff);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(238, 180, 255, 0.4);
 }
 
 /* Media Queries pour le responsive */

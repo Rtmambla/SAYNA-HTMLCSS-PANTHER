@@ -236,113 +236,153 @@
     }
 }
 
-/* SECTION 4 - Fond général */
 .section4 {
+    // ✅ BACKGROUND PLEINE LARGEUR
+    width: 100vw; // Toute la largeur de la fenêtre
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
-    width: 100%;
-    background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
-    background-size: cover;
+    background: url(../Assets/Accueil/Pantherhome7.png) center/cover no-repeat;
 
-    .confirmation {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        z-index: 1000;
-        align-items: center;
-        justify-content: center;
-        max-height: 100vh;
-    }
-    
-    // /* Effet étoiles optionnel */
-    // :before {
-    //     content: "";
-    //     position: absolute;
-    //     inset: 0;
-    //     background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
-    //     background-size: auto; /* ou 100% 100% selon l'effet souhaité */;
-    //     opacity: 0.3;
-    //     z-index: 0;
+    // Confirmation modal (inchangée)
+    // .confirmation {
+    //     display: none;
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100vw;
+    //     height: 100vh;
+    //     background-color: rgba(0, 0, 0, 0.8);
+    //     z-index: 1000;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+
+    //     .confirmation-content {
+    //         background: rgba(255, 255, 255, 0.95);
+    //         padding: 2rem;
+    //         border-radius: 1rem;
+    //         text-align: center;
+    //         max-width: 90%;
+    //         color: #000;
+
+    //         .close-btn {
+    //             display: inline-block;
+    //             margin-top: 1rem;
+    //             padding: 0.5rem 1rem;
+    //             background: #eeb4ff;
+    //             color: #000;
+    //             text-decoration: none;
+    //             border-radius: 2rem;
+    //         }
+    //     }
     // }
 
-    /* Bloc principal translucide */
+    // ✅ FORMULAIRE RESPONSIVE
     .fondsec4 {
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(1rem);
-        border-radius: 20rem;
-        padding: 4rem 6rem;
-        max-width: 80%;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.95) 0%,   // Blanc quasi opaque en haut
+            rgba(255, 255, 255, 0.6) 30%,   // Transition douce
+            rgba(255, 255, 255, 0.2) 70%,   // Plus transparent
+            rgba(255, 255, 255, 0) 100%     // Totalement transparent en bas
+        );
+        border-radius: 15rem;
+        padding: 3rem 2rem; // Réduit pour mobile
         width: 90%;
+        max-width: 850px; // Largeur max sur desktop
         text-align: center;
-        box-shadow: 0 0 3rem rgba(0,0,0,0.3);
+        margin: 0 1rem; // Marges latérales
+        
 
-        /* Titres */
+        // Titres
         p {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #fff;
+            @extend %texte;
+            font-size: 1rem;
+            margin-bottom: 0,68rem;
+            color: $black;
         }
 
         h2 {
-            font-size: 2.4rem;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
             margin-bottom: 2rem;
-            color: #fff;
+            color: $black;
         }
-    }
 
+        // Champs formulaire
+        // label {
+        //     display: block;
+        //     text-align: left;
+        //     margin-bottom: 0.5rem;
+        //     font-size: clamp(0.9rem, 2.5vw, 1rem);
+        //     color: $black;
+        // }
+        
+        input,
+        textarea {
+            width: 68%;
+            padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1rem, 3vw, 1.5rem);
+            margin-bottom: 1.5rem;
+            border: 0.080rem solid $black;
+            border-radius: 3rem;
+            background: rgba(255,255,255,0.2);
+            color: $black;
+            outline: none;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            box-sizing: border-box; // Important pour responsive
+            color: $black;
 
-    /* Champs du formulaire */
-    .fondsec4 input,
-    .fondsec4 textarea {
-        width: 100%;
-        padding: 1rem 1.5rem;
-        margin-bottom: 1.5rem;
-        border: 0.2rem solid rgba(255,255,255,0.5);
-        border-radius: 5rem;
-        background: rgba(255,255,255,0.2);
-        color: #fff;
-        outline: none;
-        font-size: 1rem;
-    }
+            &::placeholder {
+                color: $black;
+            }
+        }
 
-    .fondsec4 textarea {
-        border-radius: 3rem;
-        resize: none;
-        min-height: 12rem;
-    }
+        textarea {
+            border-radius: 2rem;
+            resize: vertical;
+            min-height: clamp(100px, 20vh, 150px);
+        }
 
-    /* Bouton */
-    #button {
-        background: linear-gradient(to right, #eeb4ff, #d8a6ff);
-        border: none;
-        color: #000;
-        font-weight: bold;
-        cursor: pointer;
-        transition: 0.3s;
-        font-size: 1.2rem;
-        padding: 1rem 3rem;
-        border-radius: 5rem;
-    }
+        // Bouton
+        #button {
+            background: linear-gradient(to right, #eeb4ff, #d8a6ff);
+            border: none;
+            color: $black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 5vw, 3rem);
+            border-radius: 3rem;
+            width: 100%;
+            max-width: 250px;
 
-    #button:hover {
-        background: linear-gradient(to right, #fcd7ff, #e0c3ff);
+            &:hover {
+                background: linear-gradient(to right, #fcd7ff, #e0c3ff);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(238, 180, 255, 0.4);
+            }
+        }
     }
 }
 
 
-
-
-
+// /* SECTION 4 - Fond général */
 // .section4 {
-//     margin: 2% 0px 5% 0px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 6rem 0;
+//     position: relative;
+//     overflow: hidden;
+//     width: 100%;
+//     background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
+//     background-size: cover;
+    
 
 //     .confirmation {
 //         display: none;
@@ -356,86 +396,83 @@
 //         align-items: center;
 //         justify-content: center;
 //         max-height: 100vh;
+//     }
+    
+//     // /* Effet étoiles optionnel */
+//     // :before {
+//     //     content: "";
+//     //     position: absolute;
+//     //     inset: 0;
+//     //     background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
+//     //     background-size: auto; /* ou 100% 100% selon l'effet souhaité */;
+//     //     opacity: 0.3;
+//     //     z-index: 0;
+//     // }
 
-//         .confirmation-content {
-//             background: linear-gradient(180deg, #F2CEF2 0%, #FFFFFF 100%);
-//             padding: 40px;
-//             border-radius: 20px;
-//             text-align: center;
-//             max-width: 500px;
-//             width: 80%;
-//             color: #021740;
-//             border: 2px solid #021740;
-//             animation: fadeIn 0.5s ease-out;
+//     /* Bloc principal translucide */
+//     .fondsec4 {
+//         background: rgba(255, 255, 255, 0.2);
+//         backdrop-filter: blur(1rem);
+//         border-radius: 20rem;
+//         padding: 4rem 6rem;
+//         max-width: 80%;
+//         width: 90%;
+//         text-align: center;
+//         box-shadow: 0 0 3rem rgba(0,0,0,0.3);
 
-//             h3 {
-//                 display: block;
-//                 font-size: 1.17em;
-//                 margin-block-start: 1em;
-//                 margin-block-end: 1em;
-//                 margin-inline-start: 0px;
-//                 margin-inline-end: 0px;
-//                 font-weight: bold;
-//                 unicode-bidi: isolate;
-//             }
+//         /* Titres */
+//         p {
+//             font-size: 1.2rem;
+//             margin-bottom: 1rem;
+//             color: #fff;
+//         }
 
-//             p {
-//                 display: block;
-//                 margin-block-start: 1em;
-//                 margin-block-end: 1em;
-//                 margin-inline-start: 0px;
-//                 margin-inline-end: 0px;
-//                 unicode-bidi: isolate;
-//             }
-
-//             .close-btn {
-//                 display: inline-block;
-//                 margin-top: 20px;
-//                 padding: 10px 25px;
-//                 background-color: #021740;
-//                 color: $white;
-//                 border-radius: 30px;
-//                 text-decoration: none;
-//                 transition: all 0.3s;
-//             }
+//         h2 {
+//             font-size: 2.4rem;
+//             margin-bottom: 2rem;
+//             color: #fff;
 //         }
 //     }
 
-//     .fondsec4 {
-//         background: url(../Assets/Accueil/Pantherhome7.png) scroll no-repeat;
-//         background-size: cover;
-//         height: 900px;
-//         max-height: 1000px;
-//         display: flex;
-//         flex-flow: column;
-//         align-items: center;
 
-//         .formulaire {
-//             display: flex;
-//             flex-flow: column;
-//             align-items: center;
-//             gap: 20px;
-//             background: rgb(255, 255, 255);
-//             background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-//             color: #021740;
-//             border-radius: 200px;
-//             width: max-content;
-//             margin: auto;
-//             padding: 5.186% 16.3% 0.741% 16.3%;
+//     /* Champs du formulaire */
+//     .fondsec4 input,
+//     .fondsec4 textarea {
+//         width: 100%;
+//         padding: 1rem 1.5rem;
+//         margin-bottom: 1.5rem;
+//         border: 0.2rem solid rgba(255,255,255,0.5);
+//         border-radius: 5rem;
+//         background: rgba(255,255,255,0.2);
+//         color: #fff;
+//         outline: none;
+//         font-size: 1rem;
+//     }
 
-//             h2 {
-//                 display: block;
-//                 font-size: 2.5em;
-//                 margin-block-start: 0.83em;
-//                 margin-block-end: 0.83em;
-//                 margin-inline-start: 0px;
-//                 margin-inline-end: 0px;
-//                 font-weight: bold;
-//                 unicode-bidi: isolate;
-//             }
-//         }
+//     .fondsec4 textarea {
+//         border-radius: 3rem;
+//         resize: none;
+//         min-height: 12rem;
+//     }
+
+//     /* Bouton */
+//     #button {
+//         background: linear-gradient(to right, #eeb4ff, #d8a6ff);
+//         border: none;
+//         color: #000;
+//         font-weight: bold;
+//         cursor: pointer;
+//         transition: 0.3s;
+//         font-size: 1.2rem;
+//         padding: 1rem 3rem;
+//         border-radius: 5rem;
+//     }
+
+//     #button:hover {
+//         background: linear-gradient(to right, #fcd7ff, #e0c3ff);
 //     }
 // }
+
 
 /* Media Queries pour le responsive */
 @media all and (max-width: 768px) {
